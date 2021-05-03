@@ -1,0 +1,7 @@
+(executable
+ (name main)
+ (libraries base cmdliner mylib)
+ (preprocess
+  (pps ppx_inline_test))
+  
+  )

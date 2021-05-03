@@ -1,0 +1,136 @@
+# dune build
+# OCAMLPARAM: unset
+# Workspace root: "C:\\Users\\aarth\\IdeaProjects\\Theorem_prover"
+# Auto-detected concurrency: 12
+# disable binary cache
+$ C:\OCaml64\home\aarth\.opam\4.11.1+mingw64c\bin\ocamlc.opt.exe -config > C:\OCaml64\tmp\dune6a1ffc.output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dyn
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path =
+#      Some External "C:/OCaml64/home/aarth/.opam/4.11.1+mingw64c/lib/toplevel"
+#  ; ocaml_bin =
+#      External "C:\\OCaml64\\home\\aarth\\.opam\\4.11.1+mingw64c\\bin"
+#  ; ocaml =
+#      Ok
+#        External
+#          "C:\\OCaml64\\home\\aarth\\.opam\\4.11.1+mingw64c\\bin\\ocaml.exe"
+#  ; ocamlc =
+#      External
+#        "C:\\OCaml64\\home\\aarth\\.opam\\4.11.1+mingw64c\\bin\\ocamlc.opt.exe"
+#  ; ocamlopt =
+#      Ok
+#        External
+#          "C:\\OCaml64\\home\\aarth\\.opam\\4.11.1+mingw64c\\bin\\ocamlopt.opt.exe"
+#  ; ocamldep =
+#      Ok
+#        External
+#          "C:\\OCaml64\\home\\aarth\\.opam\\4.11.1+mingw64c\\bin\\ocamldep.opt.exe"
+#  ; ocamlmklib =
+#      Ok
+#        External
+#          "C:\\OCaml64\\home\\aarth\\.opam\\4.11.1+mingw64c\\bin\\ocamlmklib.opt.exe"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" :
+#            "C:\\OCaml64\\home\\aarth\\.opam\\4.11.1+mingw64c\\lib"
+#        ; "DUNE_OCAML_STDLIB" :
+#            "C:/OCaml64/home/aarth/.opam/4.11.1+mingw64c/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" : "C:\\Users\\aarth\\IdeaProjects\\Theorem_prover"
+#        ; "INSIDE_DUNE" :
+#            "C:\\Users\\aarth\\IdeaProjects\\Theorem_prover\\_build/default"
+#        ; "MANPATH" :
+#            "C:\\Users\\aarth\\IdeaProjects\\Theorem_prover\\_build/install/default/bin"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "C:\\Users\\aarth\\IdeaProjects\\Theorem_prover\\_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "C:\\Users\\aarth\\IdeaProjects\\Theorem_prover\\_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "C:\\Users\\aarth\\IdeaProjects\\Theorem_prover\\_build/install/default/lib/toplevel"
+#        }
+#  ; findlib_path =
+#      [ External "C:\\OCaml64\\home\\aarth\\.opam\\4.11.1+mingw64c\\lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.11.1"
+#      ; standard_library_default =
+#          "C:/cygwin/home/appveyor/.opam/4.11.1+mingw64c/lib/ocaml"
+#      ; standard_library =
+#          "C:/OCaml64/home/aarth/.opam/4.11.1+mingw64c/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "x86_64-w64-mingw32-gcc"
+#      ; ocamlc_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-mms-bitfields" ]
+#      ; ocamlc_cppflags = []
+#      ; ocamlopt_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-mms-bitfields" ]
+#      ; ocamlopt_cppflags = []
+#      ; bytecomp_c_compiler =
+#          [ "x86_64-w64-mingw32-gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-mms-bitfields"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lws2_32"; "-lversion" ]
+#      ; native_c_compiler =
+#          [ "x86_64-w64-mingw32-gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-mms-bitfields"
+#          ]
+#      ; native_c_libraries = [ "-lws2_32"; "-lversion" ]
+#      ; cc_profile = []
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "mingw64"
+#      ; asm = [ "x86_64-w64-mingw32-as" ]
+#      ; asm_cfi_supported = false
+#      ; with_frame_pointers = false
+#      ; ext_exe = ".exe"
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".dll"
+#      ; os_type = "Win32"
+#      ; default_executable_name = "camlprog.exe"
+#      ; systhread_supported = true
+#      ; host = "x86_64-w64-mingw32"
+#      ; target = "x86_64-w64-mingw32"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X028"
+#      ; cmi_magic_number = "Caml1999I028"
+#      ; cmo_magic_number = "Caml1999O028"
+#      ; cma_magic_number = "Caml1999A028"
+#      ; cmx_magic_number = "Caml1999Y028"
+#      ; cmxa_magic_number = "Caml1999Z028"
+#      ; ast_impl_magic_number = "Caml1999M028"
+#      ; ast_intf_magic_number = "Caml1999N028"
+#      ; cmxs_magic_number = "Caml1999D028"
+#      ; cmt_magic_number = "Caml1999T028"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = true
+#      }
+#  }
+$ (cd _build/default && C:\OCaml64\home\aarth\.opam\4.11.1+mingw64c\bin\ocamlc.opt.exe -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I th_prover/lib/.mylib.objs/byte -I C:\OCaml64\home\aarth\.opam\4.11.1+mingw64c\lib\base -I C:\OCaml64\home\aarth\.opam\4.11.1+mingw64c\lib\base\base_internalhash_types -I C:\OCaml64\home\aarth\.opam\4.11.1+mingw64c\lib\base\caml -I C:\OCaml64\home\aarth\.opam\4.11.1+mingw64c\lib\base\shadow_stdlib -I C:\OCaml64\home\aarth\.opam\4.11.1+mingw64c\lib\cmdliner -I C:\OCaml64\home\aarth\.opam\4.11.1+mingw64c\lib\jane-street-headers -I C:\OCaml64\home\aarth\.opam\4.11.1+mingw64c\lib\ppx_compare\runtime-lib -I C:\OCaml64\home\aarth\.opam\4.11.1+mingw64c\lib\ppx_enumerate\runtime-lib -I C:\OCaml64\home\aarth\.opam\4.11.1+mingw64c\lib\ppx_hash\runtime-lib -I C:\OCaml64\home\aarth\.opam\4.11.1+mingw64c\lib\ppx_inline_test\config -I C:\OCaml64\home\aarth\.opam\4.11.1+mingw64c\lib\ppx_inline_test\runtime-lib -I C:\OCaml64\home\aarth\.opam\4.11.1+mingw64c\lib\ppx_sexp_conv\runtime-lib -I C:\OCaml64\home\aarth\.opam\4.11.1+mingw64c\lib\sexplib0 -I C:\OCaml64\home\aarth\.opam\4.11.1+mingw64c\lib\time_now -no-alias-deps -opaque -open Mylib -o th_prover/lib/.mylib.objs/byte/mylib__Sequent.cmo -c -impl th_prover/lib/sequent.pp.ml)
+> File "th_prover/lib/sequent.ml", line 4, characters 16-31:
+> 4 | let sequent = ((Formule.formule) array) * Formule.formule
+>                     ^^^^^^^^^^^^^^^
+> Error: Unbound value Formule.formule
+> Hint: Did you mean eq_formule?
+[2]
