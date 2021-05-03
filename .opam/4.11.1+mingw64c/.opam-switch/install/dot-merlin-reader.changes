@@ -1,0 +1,11 @@
+added: [
+  "bin\\dot-merlin-reader.exe" {"F:S4345875T1619937682."}
+  "doc\\dot-merlin-reader" {"D"}
+  "doc\\dot-merlin-reader\\CHANGES.md" {"F:S34346T1619937676."}
+  "doc\\dot-merlin-reader\\LICENSE" {"F:S1094T1619937676."}
+  "doc\\dot-merlin-reader\\README.md" {"F:S13466T1619937676."}
+  "lib\\dot-merlin-reader" {"D"}
+  "lib\\dot-merlin-reader\\META" {"F:S0T1619937676."}
+  "lib\\dot-merlin-reader\\dune-package" {"F:S55T1619937676."}
+  "lib\\dot-merlin-reader\\opam" {"F:S630T1619937676."}
+]

@@ -1,0 +1,11 @@
+--- ./emacs/merlin.el
++++ ./emacs/merlin.el
+@@ -1764,7 +1764,7 @@
+         ((equal merlin-command 'opam)
+          (with-temp-buffer
+            (if (eq (call-process-shell-command
+-                    "opam var bin" nil (current-buffer) nil) 0)
++                    (if (eq system-type 'cygwin) "cygpath \"$(opam var bin)\"" "opam var bin") nil (current-buffer) nil) 0)
+                (let ((bin-path
+                       (replace-regexp-in-string "\n$" "" (buffer-string))))
+                  ;; the opam bin dir needs to be on the path, so if merlin

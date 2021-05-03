@@ -1,0 +1,18 @@
+added: [
+  "doc\\result" {"D"}
+  "doc\\result\\CHANGES.md" {"F:S253T1619937661."}
+  "doc\\result\\LICENSE.md" {"F:S1536T1619937661."}
+  "doc\\result\\README.md" {"F:S210T1619937661."}
+  "lib\\result" {"D"}
+  "lib\\result\\META" {"F:S166T1619937661."}
+  "lib\\result\\dune-package" {"F:S345T1619937661."}
+  "lib\\result\\opam" {"F:S654T1619937661."}
+  "lib\\result\\result.a" {"F:S1576T1619937662."}
+  "lib\\result\\result.cma" {"F:S6331T1619937662."}
+  "lib\\result\\result.cmi" {"F:S3784T1619937662."}
+  "lib\\result\\result.cmt" {"F:S12779T1619937662."}
+  "lib\\result\\result.cmx" {"F:S1853T1619937662."}
+  "lib\\result\\result.cmxa" {"F:S277T1619937662."}
+  "lib\\result\\result.cmxs" {"F:S662639T1619937664."}
+  "lib\\result\\result.ml" {"F:S125T1619937662."}
+]

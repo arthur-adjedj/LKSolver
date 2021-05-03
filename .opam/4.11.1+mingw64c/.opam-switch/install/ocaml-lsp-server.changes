@@ -1,0 +1,11 @@
+added: [
+  "bin\\ocamllsp.exe" {"F:S14630024T1619937753."}
+  "doc\\ocaml-lsp-server" {"D"}
+  "doc\\ocaml-lsp-server\\CHANGES.md" {"F:S1178T1619937718."}
+  "doc\\ocaml-lsp-server\\LICENSE.md" {"F:S818T1619937718."}
+  "doc\\ocaml-lsp-server\\README.md" {"F:S5219T1619937718."}
+  "lib\\ocaml-lsp-server" {"D"}
+  "lib\\ocaml-lsp-server\\META" {"F:S0T1619937718."}
+  "lib\\ocaml-lsp-server\\dune-package" {"F:S62T1619937718."}
+  "lib\\ocaml-lsp-server\\opam" {"F:S1085T1619937718."}
+]
