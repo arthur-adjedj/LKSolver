@@ -1,6 +1,5 @@
 (** @canonical Mylib.Formule *)
 module Formule = Mylib__Formule
 
-
 (** @canonical Mylib.Sequent *)
 module Sequent = Mylib__Sequent

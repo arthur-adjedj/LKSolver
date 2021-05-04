@@ -1,5 +1,4 @@
 (executable
  (name main)
- (libraries base cmdliner mylib)
- (preprocess
-  (pps ppx_inline_test)))
+ (libraries stdlib base graphics cmdliner mylib)
+)

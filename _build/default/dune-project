@@ -1,2 +1,3 @@
-(lang dune 2.8)
+(lang dune 2.7)
 (name th_prover)
+

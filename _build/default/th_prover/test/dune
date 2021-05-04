@@ -1,5 +1,4 @@
 (test
  (name th_prover)
  (libraries base cmdliner)
- (preprocess
-  (pps ppx_inline_test)))
+)
