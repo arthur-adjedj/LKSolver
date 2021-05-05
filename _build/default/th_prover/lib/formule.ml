@@ -5,7 +5,6 @@ type formule =
     |And of formule * formule
     |Or of formule * formule
     |Imp of formule * formule
-    |Eq of formule * formule
 
 
 (* Vérifie si f1 et f2 sont égales (et non uniquement sémantiquement equivalentes\) à nom de variables près,
@@ -20,6 +19,5 @@ let eq_formule (f1:formule) (f2:formule):bool =
         |And(a1,b1),And(a2,b2) -> (aux (a1,a2)) && (aux (b1,b2))
         |Or(a1,b1),Or(a2,b2) -> (aux (a1,a2)) && (aux (b1,b2))
         |Imp(a1,b1),Imp(a2,b2) -> (aux (a1,a2)) && (aux (b1,b2))
-        |Eq(a1,b1),Eq(a2,b2) -> (aux (a1,a2)) && (aux (b1,b2))
         |_ -> false
     in aux (f1,f2)

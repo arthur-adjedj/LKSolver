@@ -1,1 +1,1 @@
-th_prover/bin/main.ml: Graphics Mylib Sequent
+th_prover/bin/main.ml: Cmdliner Mylib Sequent Term

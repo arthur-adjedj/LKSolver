@@ -3,7 +3,7 @@
 # Workspace root: "C:\\Users\\aarth\\IdeaProjects\\Theorem_prover"
 # Auto-detected concurrency: 12
 # disable binary cache
-$ C:\OCaml64\home\aarth\.opam\4.11.1+mingw64c\bin\ocamlc.opt.exe -config > C:\OCaml64\tmp\dune5c3bdf.output
+$ C:\OCaml64\home\aarth\.opam\4.11.1+mingw64c\bin\ocamlc.opt.exe -config > C:\OCaml64\tmp\dune344191.output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
