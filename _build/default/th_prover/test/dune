@@ -1,4 +1,0 @@
-(test
- (name th_prover)
- (libraries base cmdliner)
-)

@@ -1,2 +1,4 @@
 /.opam
 /_build
+/.vscode
+th_prover.code-workspace

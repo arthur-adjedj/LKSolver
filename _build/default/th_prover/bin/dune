@@ -1,4 +1,0 @@
-(executable
- (name main)
- (libraries stdlib base graphics cmdliner mylib)
-)
