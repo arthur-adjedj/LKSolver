@@ -1,4 +1,5 @@
 open Sequent 
+open Tactiques
 
 
 type state = {mutable fin : sequent list;
@@ -10,6 +11,15 @@ let next_state state =
   state.fin <- (state.run)::state.fin;
   state.run <- List.hd state.unfin;
   state.unfin <- List.tl state.unfin
+
+let apply (t:tactique) (st:state) =
+  let res = t st.run in
+  st.run <- List.hd res;
+  st.unfin <- (List.tl res)@st.unfin
+
+
+  
+  
 
 
   
