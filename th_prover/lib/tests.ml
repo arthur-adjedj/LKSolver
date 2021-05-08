@@ -1,6 +1,7 @@
 open Tactiques
+open Formule
 
-let%test "axiom" = axiom ([|Var 'a'|],[|Var 'a'|])
+let%test "axiom" = axiom ([|Var 'a'|],[|Var 'a'|]) = [([||],[||])]
 let%test "not_gauche" = not_gauche 0 ([|Not (Var 'a')|],[||]) = [([||],[|Var 'a'|])]
 let%test "not_droite" = not_droite 0 ([||],[|Not (Var 'a')|]) = [([|Var 'a'|],[||])]
 let%test "and_gauche" = and_gauche 0 ([|And(Var 'a',Var 'b')|],[||]) = [([|Var 'a';Var 'b'|],[||])]
