@@ -23,3 +23,11 @@ let eq_formule (f1:formule) (f2:formule):bool =
         |_ -> false
     in aux f1 f2;;
 
+let rec print_formule f = match f with
+    |Bottom -> print_char 'B'
+    |Var a -> print_char a
+    |Not a -> print_string "¬(";print_formule a;print_string ")"
+    |And(a,b) -> print_string "(";print_formule a;print_string ")^(";print_formule b;print_string ")"
+    |Or(a,b) -> print_string "(";print_formule a;print_string ")v(";print_formule b;print_string ")"
+    |Imp(a,b) -> print_string "(";print_formule a;print_string ")->(";print_formule b;print_string ")"
+
