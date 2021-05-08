@@ -1,12 +1,14 @@
-open Mylib
+open Mylib.Formule
 
-let test:Sequent.sequent = ([|Var 'a'|],Var 'a')
+let print_bool = function
+	|true -> (print_endline "true")
+	|false -> (print_endline "false")
 
-type regle = {prem : Mylib.Sequent.sequent array;
-			  concl : Mylib.Sequent.sequent}
 
-let modus_ponens:regle = {prem = [| ([|Var 'A'|] ,Var 'B' ) ;([||] , Var 'A') |];
-					concl = ([||],[|Var 'B')}
+let () = print_bool (eq_formule (And(Not (Var 'a'),Var 'b')) (And(Not(Bottom), Or((Var 'a'),Var 'b'))));
+				print_bool (eq_formule (And(Not (Var 'a'),Var 'a')) (And(Not(Bottom), Or((Var 'a'),Var 'b'))))
+
+
 
 
 
