@@ -1,4 +1,5 @@
 /.opam
 /_build
 /.vscode
+.merlin
 th_prover.code-workspace
