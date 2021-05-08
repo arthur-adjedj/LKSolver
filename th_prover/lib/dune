@@ -1,6 +1,7 @@
 (library
- (inline_tests)
  (name mylib)
  (libraries base cmdliner stdlib)
+ (inline_tests)
  (preprocess (pps ppx_inline_test))
+ 
 )
