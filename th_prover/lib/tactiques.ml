@@ -11,7 +11,7 @@ let axiom s =
 	let pattern = ([|Var 'a'|],[|Var 'a'|]) in
 	if not (is_s_equiv pattern s) then
 		raise (Wrong_sequent ([s],"Wrong_sequent"))
-	else ([([||],[||])],"axiom")
+	else ([],"axiom")
 
 
 (*pour la coupure, c est un couple de bool arrays pour séparer les hypos et concls en deux*)
@@ -79,7 +79,7 @@ let not_gauche i (gf,df) =
 		end
 
 
-let not_droite i (gf,df) =
+let not_droite i (gf,df)=
 	let pattern = Not(Var 'a') in
 	if i>= (Array.length df ) || not (is_f_equiv pattern df.(i)) then
 		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent"))
@@ -102,7 +102,7 @@ let not_droite i (gf,df) =
 		end		
 
 
-let and_gauche i (gf,df) =
+let and_gauche i (gf,df)=
 	let pattern =  And(Var 'a',Var 'b') in
 	if i> (Array.length gf ) || not (is_f_equiv pattern gf.(i)) then
 		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent"))
@@ -141,7 +141,7 @@ let and_droite i (gf,df) =
 		end
 	
 
-let or_gauche i (gf,df) =
+let or_gauche i (gf,df) :((sequent list) * string)=
 	let pattern =  Or(Var 'a',Var 'b') in
 	if i> (Array.length gf ) || not (is_f_equiv pattern gf.(i)) then
 		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent"))
@@ -158,7 +158,7 @@ let or_gauche i (gf,df) =
 		end
 
 
-let or_droite i (gf,df) =
+let or_droite i (gf,df) :((sequent list) * string)=
 	let pattern =  Or(Var 'a',Var 'b') in
 	if i> (Array.length df ) || not (is_f_equiv pattern df.(i)) then
 		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent"))
@@ -180,7 +180,7 @@ let or_droite i (gf,df) =
 		end
 
 
-let imp_gauche i (gf,df) =
+let imp_gauche i (gf,df) :((sequent list) * string)=
 	let pattern = Imp(Var 'a',Var 'b') in
 	if i> (Array.length gf) || not (is_f_equiv pattern gf.(i)) then
 		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent"))
@@ -207,7 +207,7 @@ let imp_gauche i (gf,df) =
 		end
 
 
-let imp_droite i	(gf,df) =
+let imp_droite i	(gf,df) :((sequent list) * string)=
 	let pattern = Imp(Var 'a',Var 'b') in
 	if i> (Array.length df) || not (is_f_equiv pattern df.(i)) then
 		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent"))
