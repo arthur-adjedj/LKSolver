@@ -18,8 +18,3 @@ let p = develop a_imp_no_no_a tactiques
 
 let () = print_bool (is_complete p)
 
-
-
-
-
-
