@@ -14,6 +14,72 @@ let axiom s =
 	else ([],"axiom")
 
 
+
+
+
+
+let aff_gauche i (gf,df) = 
+	if i> (Array.length gf ) then
+		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent"))
+	else 
+		begin
+			let n1 = Array.length gf in
+			let gres = Array.make (n1-1) Bottom 
+			and dres = Array.copy df  in
+			for j = 0 to n1-2 do
+				if j<i then gres.(j) <- gf.(j)
+				else gres.(j) <-gf.(j+1) 
+			done;
+			([(gres,dres)],"aff gauche "^(string_of_int i))
+		end
+
+let aff_droite i (gf,df) = 
+	if i> (Array.length df) then
+		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent"))
+	else 
+		begin
+			let n2 = Array.length df in
+			let gres = Array.copy gf  
+			and dres = Array.make (n2-1) Bottom in
+			for j = 0 to n2-2 do
+				if j<i then dres.(j) <- df.(j)
+				else dres.(j) <-df.(j+1) 
+			done;
+			([(gres,dres)],"aff droite "^(string_of_int i))
+		end
+
+let contr_gauche i j (gf,df) =
+	if i> (Array.length gf) || j> (Array.length gf) || gf.(i) <> df.(i) || i=j then
+		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent"))
+else
+	begin
+		let n1 = Array.length gf in 
+		let gres = Array.make (n1-1) Bottom 
+		and dres = Array.copy df in 
+		for k = 0 to n1-2 do
+			if k<i then gres.(k) <- gf.(j)
+			else gres.(k) <-gf.(k+1) 
+		done;
+		([(gres,dres)],"contr gauche "^(string_of_int i)^" "^(string_of_int j))
+	end
+
+
+let contr_droite i j (gf,df) =
+	if i> (Array.length df) || j> (Array.length df) || df.(i) <> df.(i) || i=j then
+		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent"))
+	else
+		begin
+			let n2 = Array.length df in 
+			let gres = Array.copy gf 
+			and dres = Array.make (n2-1) Bottom in 
+			for k = 0 to n2-2 do
+				if k<i then dres.(k) <- df.(j)
+				else dres.(k) <-df.(k+1) 
+			done;
+			([(gres,dres)],"contr droite "^(string_of_int i)^" "^(string_of_int j))
+		end
+
+
 (*pour la coupure, c est un couple de bool arrays pour séparer les hypos et concls en deux*)
 (*/!\ pas encore testée*)
 let coupure f c s = 
