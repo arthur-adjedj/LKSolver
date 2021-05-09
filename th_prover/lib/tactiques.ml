@@ -1,25 +1,24 @@
 open Formule
 open Sequent 
 
-exception Wrong_sequent of sequent list
+exception Wrong_sequent of ((sequent list) * string)
 
-type tactique = sequent -> sequent list
+type tactique = sequent -> ((sequent list) * string)
 
-let rec print_hypos = function
-	|[] -> print_endline ""
-	|h::t -> print_char '(';print_sequent h;print_string ") ";print_hypos t
 
 
 let axiom s =
 	let pattern = ([|Var 'a'|],[|Var 'a'|]) in
-	if not (eq_sequents pattern s) then
-		raise (Wrong_sequent [s])
-	else [([||],[||])]
+	if not (is_s_equiv pattern s) then
+		raise (Wrong_sequent ([s],"Wrong_sequent"))
+	else ([([||],[||])],"axiom")
+
 
 (*pour la coupure, c est un couple de bool arrays pour séparer les hypos et concls en deux*)
+(*/!\ pas encore testée*)
 let coupure f c s = 
 	if (Array.length (fst c) <> Array.length (fst s)) || (Array.length (snd c) <> Array.length (snd s)) 
-		then raise (Wrong_sequent [s])
+		then raise (Wrong_sequent ([s],"Wrong_sequent"))
 	else
 		begin
 			let n1 = Array.length (fst s)
@@ -53,14 +52,14 @@ let coupure f c s =
 
 			dres1.(k2) <- f;
 			gres2.(n1-k1) <- f;
-			[(gres1,dres1);(gres2,dres2)]
+			([(gres1,dres1);(gres2,dres2)],"coupure")
 		end
 	
 
 let not_gauche i (gf,df) =
 	let pattern = Not(Var 'a') in
-	if i> (Array.length gf ) || not (eq_formule pattern gf.(i)) then
-		raise (Wrong_sequent [(gf,df)])
+	if i> (Array.length gf ) || not (is_f_equiv pattern gf.(i)) then
+		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent"))
 	else 
 		begin
 			let un_not (Not a)  = a in
@@ -76,14 +75,14 @@ let not_gauche i (gf,df) =
 				dres.(j) <- df.(j)
 			done;
 			dres.(n2) <- (un_not gf.(i));
-			[(gres,dres)]
+			([(gres,dres)],"┐ gauche "^(string_of_int i))
 		end
 
 
 let not_droite i (gf,df) =
 	let pattern = Not(Var 'a') in
-	if i>= (Array.length df ) || not (eq_formule pattern df.(i)) then
-		raise (Wrong_sequent [(gf,df)])
+	if i>= (Array.length df ) || not (is_f_equiv pattern df.(i)) then
+		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent"))
 	else 
 		begin
 			let un_not (Not a)  = a in
@@ -99,15 +98,14 @@ let not_droite i (gf,df) =
 				gres.(j) <- gf.(j)
 			done;
 			gres.(n1) <- (un_not df.(i));
-			[(gres,dres)]
+			([(gres,dres)],"┐ droite "^(string_of_int i))
 		end		
-
 
 
 let and_gauche i (gf,df) =
 	let pattern =  And(Var 'a',Var 'b') in
-	if i> (Array.length gf ) || not (eq_formule pattern gf.(i)) then
-		raise (Wrong_sequent [(gf,df)])
+	if i> (Array.length gf ) || not (is_f_equiv pattern gf.(i)) then
+		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent"))
 	else
 		begin
 			let un_and (And (a,b)) = (a,b) in
@@ -122,15 +120,14 @@ let and_gauche i (gf,df) =
 			done;
 			gres.(i) <- fst (un_and gf.(i)) ;
 			gres.(i+1) <- snd (un_and gf.(i));
-			[(gres,dres)]
+			([(gres,dres)],"^ gauche "^(string_of_int i))
 		end
-
 
 
 let and_droite i (gf,df) =
 	let pattern =  And(Var 'a',Var 'b') in
-	if i> (Array.length df ) || not (eq_formule pattern df.(i)) then
-		raise (Wrong_sequent [(gf,df)])
+	if i> (Array.length df ) || not (is_f_equiv pattern df.(i)) then
+		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent"))
 	else
 		begin
 			let un_and (And (a,b)) = (a,b) in
@@ -140,13 +137,14 @@ let and_droite i (gf,df) =
 			and gres2 = Array.copy gf in
 			dres1.(i) <- fst (un_and df.(i));
 			dres2.(i) <- snd (un_and df.(i));
-			[(gres1,dres1);(gres2,dres2)]
+			([(gres1,dres1);(gres2,dres2)],"^ droite "^(string_of_int i))
 		end
 	
+
 let or_gauche i (gf,df) =
 	let pattern =  Or(Var 'a',Var 'b') in
-	if i> (Array.length gf ) || not (eq_formule pattern gf.(i)) then
-		raise (Wrong_sequent [(gf,df)])
+	if i> (Array.length gf ) || not (is_f_equiv pattern gf.(i)) then
+		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent"))
 	else
 		begin
 			let un_or (Or (a,b)) = (a,b) in
@@ -156,14 +154,14 @@ let or_gauche i (gf,df) =
 			and dres2 = Array.copy df in
 			gres1.(i) <- fst (un_or gf.(i)) ;
 			gres2.(i) <- snd (un_or gf.(i));
-			[(gres1,dres1);(gres2,dres2)]
+			([(gres1,dres1);(gres2,dres2)],"v gauche "^(string_of_int i))
 		end
 
 
 let or_droite i (gf,df) =
 	let pattern =  Or(Var 'a',Var 'b') in
-	if i> (Array.length df ) || not (eq_formule pattern df.(i)) then
-		raise (Wrong_sequent [(gf,df)])
+	if i> (Array.length df ) || not (is_f_equiv pattern df.(i)) then
+		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent"))
 	else
 		begin
 			let un_or (Or (a,b)) = (a,b) in
@@ -178,15 +176,14 @@ let or_droite i (gf,df) =
 			done;
 			dres.(i) <- fst (un_or df.(i)) ;
 			dres.(i+1) <- snd (un_or df.(i));
-			[(gres,dres)]
+			([(gres,dres)],"v droite "^(string_of_int i))
 		end
-
 
 
 let imp_gauche i (gf,df) =
 	let pattern = Imp(Var 'a',Var 'b') in
-	if i> (Array.length gf) || not (eq_formule pattern gf.(i)) then
-		raise (Wrong_sequent [(gf,df)])
+	if i> (Array.length gf) || not (is_f_equiv pattern gf.(i)) then
+		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent"))
 	else
 		begin
 			let un_imp (Imp (a,b)) = (a,b) in
@@ -206,15 +203,14 @@ let imp_gauche i (gf,df) =
 				dres1.(j) <-df.(j)
 			done;
 			dres1.(n2) <- fst (un_imp gf.(i));
-			[(gres1,dres1);(gres2,dres2)]
+			([(gres1,dres1);(gres2,dres2)],"-> gauche "^(string_of_int i))
 		end
 
 
-		
 let imp_droite i	(gf,df) =
 	let pattern = Imp(Var 'a',Var 'b') in
-	if i> (Array.length df) || not (eq_formule pattern df.(i)) then
-		raise (Wrong_sequent [(gf,df)])
+	if i> (Array.length df) || not (is_f_equiv pattern df.(i)) then
+		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent"))
 	else
 		begin
 			let un_imp (Imp (a,b)) = (a,b) in
@@ -226,6 +222,6 @@ let imp_droite i	(gf,df) =
 				gres.(j) <- gf.(j)
 			done;
 			gres.(n1) <- fst (un_imp df.(i));
-			[(gres,dres)]
+			([(gres,dres)], "-> droite "^(string_of_int i))
 		end
 			

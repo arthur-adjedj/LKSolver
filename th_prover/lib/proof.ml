@@ -1,33 +1,40 @@
-open Sequent 
+open State 
 open Tactiques
 
+(*On suppose une preuve toujours non vide*)
+type proof = (state*string) list
 
-type state = {mutable fin : sequent list;
-              mutable run: sequent;
-              mutable unfin : sequent list}
+exception Proof_complete of proof
+
+let apply (t:tactique) (p:proof) =
+    let last = fst (List.hd p) in
+    if is_empty last then raise (Proof_complete p)
+
+    else 
+      begin
+
+        if is_current_empty last then 
+          begin
+            let next_s = t (List.hd last.queue) in
+            let next = {current = Seq (List.hd (fst next_s));
+                        queue = (List.tl (fst next_s) @ (List.tl last.queue))}
+            in ((next,"")::(last,snd next_s)::(List.tl p))
+          end
+
+        else
+          begin
+            let next_s = (match last.current with | Seq a -> (t a)) in
+            let next = {current = Seq (List.hd (fst next_s));
+                        queue = (List.tl (fst next_s)) @ (List.tl last.queue)}
+            in ((next,"")::(last,snd next_s)::(List.tl p))
+          end
+
+      end
+      
+let init s =
+    let state = {current = s;
+                 queue = []}
+    in [(state,"")]
 
 
-let next_state state =
-  state.fin <- (state.run)::state.fin;
-  state.run <- List.hd state.unfin;
-  state.unfin <- List.tl state.unfin
-
-let apply (t:tactique) (st:state) =
-  let res = t st.run in
-  st.run <- List.hd res;
-  st.unfin <- (List.tl res)@st.unfin
-
-
-  
-  
-
-
-  
-
-
-
-
-
-
-    
-
+let is_complete p = is_empty (List.hd (fst p))    
