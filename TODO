@@ -1,6 +1,4 @@
--coder les tactiques principales
--établir l'application d'une règle à une array de séquents 
--établir un type "états" contenant chaque états d'une preuve ainsi que la règle amenant de l'état n à n+1
+-implémenter groupe structurel + tester coupure
 -établir une vérification de preuve par vérification de chaque état de la preuve
 -écrire la syntaxe des fichiers de preuve
 -parseur de fichiers de preuves
