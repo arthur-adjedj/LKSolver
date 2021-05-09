@@ -25,16 +25,16 @@ let is_s_equiv (gf1,df1) (gf2,df2) :bool =
 
 
 let sequent_to_string (gf,df) =
-  let res = ref [] in
+  let res = ref [" "] in
   let n1 = Array.length gf
   and n2 = Array.length df in 
   for i=0 to n2-1 do 
     res := "("::(formule_to_string df.(n2-1-i))::")"::!res;
     if i<>(n2-1) then res:= ","::!res
   done;
-  res := "┤":: !res ;
+  res := " ├ ":: !res ;
   for i=0 to n1-1 do 
-    res := "("::(formule_to_string gf.(n2-1-i))::")"::!res;
+    res := "("::(formule_to_string gf.(n1-1-i))::")"::!res;
     if i<>(n1-1) then res:= ","::!res
   done;
   String.concat "" !res

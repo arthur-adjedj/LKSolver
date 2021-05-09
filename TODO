@@ -1,5 +1,4 @@
--implémenter groupe structurel + tester coupure
--établir une vérification de preuve par vérification de chaque état de la preuve
+-tester coupure
 -écrire la syntaxe des fichiers de preuve
 -parseur de fichiers de preuves
 -coder les commandes d'accès à l'assistant de preuve
