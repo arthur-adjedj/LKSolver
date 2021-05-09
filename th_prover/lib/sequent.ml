@@ -1,18 +1,16 @@
-open Formule
 
 exception Unequal_length of bool
 
-type sequent = (formule array)* (formule array)
+type sequent = (Formule.formule array)* (Formule.formule array)
 
 
-
-(*On suppose lf1 et lf2 triées par Array.fast_sort*)
-let eq_sequents (gf1,df1) (gf2,df2) :bool =    
-    if not ((Array.for_all2 eq_formule gf1 gf2) && (Array.for_all2 eq_formule df1 df2))
+(*On suppose gf1,df1,gf2 et df2 triées par Array.fast_sort*)
+let equiv (gf1,df1) (gf2,df2) :bool =    
+    if not ((Array.for_all2 Formule.equiv gf1 gf2) && (Array.for_all2 Formule.equiv df1 df2))
       then raise (Unequal_length  false)
   else begin 
     let dict = Hashtbl.create 64 in
-    let rec aux o t = match o,t with
+    let rec aux (o:Formule.formule) (t:Formule.formule) = match o,t with
         |Bottom,Bottom -> true
         |Var _ ,_ ->( try (if (Hashtbl.find dict o) <> t then false else (Hashtbl.replace dict o t; true))
                        with Not_found -> Hashtbl.add dict o t;true)
@@ -24,22 +22,21 @@ let eq_sequents (gf1,df1) (gf2,df2) :bool =
     in (Array.for_all2 aux gf1 gf2) && (Array.for_all2 aux df1 df2) end;;
 
 
-let print_sequent (gf,df) =
+
+let to_string (gf,df) =
+  let res = ref [] in
   let n1 = Array.length gf
   and n2 = Array.length df in 
-  for i=0 to n1-1 do 
-    print_char '(';
-    print_formule gf.(i);
-    print_char ')';
-    if i<>(n1-1) then print_char ','
-  done;
-  print_string "-|";
   for i=0 to n2-1 do 
-    print_char '(';
-    print_formule df.(i);
-    print_char ')';
-    if i<>(n2-1) then print_char ','
+    res := "("::(Formule.to_string df.(n2-1-i))::")"::!res;
+    if i<>(n2-1) then res:= ","::!res
   done;
+  res := "┤":: !res ;
+  for i=0 to n1-1 do 
+    res := "("::(Formule.to_string gf.(n2-1-i))::")"::!res;
+    if i<>(n1-1) then res:= ","::!res
+  done;
+  String.concat "" !res
 
-
+  let print_sequent s = print_string (to_string s)
 

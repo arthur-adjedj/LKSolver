@@ -10,7 +10,7 @@ type formule =
 (*Vérifie si f1 possède un pattern contenu dans f1. Par exemple, f1 = And(Not (Var 'a'),Var 'b') et f2 = And(Not(Bottom), Or((Var 'a),Var 'b'))*)
 (*A remarquer que l'ordre des arguments compte ici, f1 est le pattern et f2 la formule suivant ce pattern*)
 
-let eq_formule (f1:formule) (f2:formule):bool =
+let equiv (f1:formule) (f2:formule):bool =
     let dict = Hashtbl.create 42 in
     let rec aux o t = match o,t with
         |Bottom,Bottom -> true
@@ -23,11 +23,14 @@ let eq_formule (f1:formule) (f2:formule):bool =
         |_ -> false
     in aux f1 f2;;
 
-let rec print_formule f = match f with
-    |Bottom -> print_char 'B'
-    |Var a -> print_char a
-    |Not a -> print_string "¬(";print_formule a;print_string ")"
-    |And(a,b) -> print_string "(";print_formule a;print_string ")^(";print_formule b;print_string ")"
-    |Or(a,b) -> print_string "(";print_formule a;print_string ")v(";print_formule b;print_string ")"
-    |Imp(a,b) -> print_string "(";print_formule a;print_string ")->(";print_formule b;print_string ")"
+
+let rec to_string = function    
+    |Bottom ->  "┴"
+    |Var a -> Char.escaped (Char.uppercase_ascii a)
+    |Not a -> "¬(" ^ (to_string a) ^ ")"
+    |And(a,b) ->  "("^ (to_string a) ^ ")^(" ^ (to_string b) ^ ")"
+    |Or(a,b) -> "("^ (to_string a) ^ ")v(" ^ (to_string b) ^ ")"
+    |Imp(a,b) -> "("^ (to_string a) ^ ")->(" ^ (to_string b) ^ ")"
+
+let print_formule f = print_string (to_string f)
 
