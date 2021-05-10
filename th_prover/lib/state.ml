@@ -21,7 +21,7 @@ let string_state s =
   let str_queue = String.concat "   " (List.map sequent_to_string s.queue) in 
   String.concat "   " (str_current::str_queue::[])
 
-let print_state s = print_endline (string_state s)
+let print_state s = print_endline (string_state s);
 
 
 

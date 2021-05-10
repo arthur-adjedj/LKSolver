@@ -1,7 +1,7 @@
--tester coupure
+-système d'ajout de règles par preuves: si P est prouvé, rajouter à la librairie la preuve sous forme de nouvelle règle
+-coder règles principales
 -écrire la syntaxe des fichiers de preuve
 -parseur de fichiers de preuves
 -coder les commandes d'accès à l'assistant de preuve
--système d'ajout de règles par preuves: si P est prouvé, rajouter à la librairie la preuve sous forme de nouvelle règle
 
 

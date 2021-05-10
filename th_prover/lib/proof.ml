@@ -20,7 +20,7 @@ let apply (p:proof) (t:tactique):proof =
                                         queue = List.tl last.queue}
                        else            {current = Seq (List.hd (fst next_s));
                                         queue = (List.tl (fst next_s) @ (List.tl last.queue))}
-            in  print_state last; ((next,"")::(last,snd next_s)::(List.tl p))
+            in  print_state next; ((next,"")::(last,snd next_s)::(List.tl p))
           end
         else
           begin
@@ -29,7 +29,7 @@ let apply (p:proof) (t:tactique):proof =
                                         queue = last.queue}
                            else        {current = Seq (List.hd (fst next_s));
                                         queue = (List.tl (fst next_s)) @ last.queue}
-            in  print_state last; ((next,"")::(last,snd next_s)::(List.tl p))
+            in  print_state next; ((next,"")::(last,snd next_s)::(List.tl p))
           end
       end
       

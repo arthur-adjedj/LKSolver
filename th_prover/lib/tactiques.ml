@@ -99,7 +99,7 @@ let coupure f c s =
 			and dres2 = Array.make (n2-k2) Bottom in 
 
 			let i1 = ref 0 in
-			for i=0 to n1 do
+			for i=0 to n1-1 do
 				if (fst c).(i) then (
 					gres1.(!i1) <- (fst s).(i);
 					incr i1
@@ -108,7 +108,7 @@ let coupure f c s =
 			done;			
 
 			let i2 = ref 0 in 
-			for i=0 to n2 do
+			for i=0 to n2-1 do
 				if (snd c).(i) then (
 					dres1.(!i2) <- (snd s).(i);
 					incr i2
@@ -181,7 +181,7 @@ let and_gauche i (gf,df)=
 			for j = 0 to n1 do
 				if j<i then gres.(j) <- gf.(j)
 				else( 
-					if j>i+1 then gres.(j) <-gf.(j+1) 
+					if j>i+1 then gres.(j) <-gf.(j-1) 
 				)
 			done;
 			gres.(i) <- fst (un_and gf.(i)) ;
