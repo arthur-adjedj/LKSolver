@@ -1,4 +1,4 @@
 (executable
  (name main)
- (libraries stdlib base graphics cmdliner mylib)
+ (libraries stdlib base graphics cmdliner proof_lib proof_store)
 )

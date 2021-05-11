@@ -1,8 +1,8 @@
-open Tactiques
-open Formule
-open Proof
-open Ext_props
-open Stored_props
+open Proof_lib.Tactiques
+open Proof_lib.Formule
+open Proof_lib.Proof
+open Proof_store.Ext_props
+open Proof_store.Stored_props
 
 
 (*tests des tactiques*)

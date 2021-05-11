@@ -1,7 +1,7 @@
 type token =
   | SEP
   | EOF
-  | CHAR of (Formule.formule)
+  | CHAR of (Proof_lib.Formule.formule)
   | IMP
   | AND
   | OR
@@ -155,77 +155,77 @@ let yyact = [|
     let _1 = (Parsing.peek_val __caml_parser_env 4 : 'expr1) in
     let _3 = (Parsing.peek_val __caml_parser_env 2 : 'expr2) in
     Obj.repr(
-# 15 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.mly"
+# 15 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.mly"
                                       ( (_1 , _3) )
-# 161 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.ml"
-               : string * Formule.formule))
+# 161 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.ml"
+               : string * Proof_lib.Formule.formule))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 3 : 'expr1) in
     let _3 = (Parsing.peek_val __caml_parser_env 1 : 'expr2) in
     Obj.repr(
-# 16 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.mly"
+# 16 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.mly"
                                       ( (_1 , _3) )
-# 169 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.ml"
-               : string * Formule.formule))
+# 169 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.ml"
+               : string * Proof_lib.Formule.formule))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 3 : 'expr1) in
     let _3 = (Parsing.peek_val __caml_parser_env 1 : 'expr2) in
     Obj.repr(
-# 17 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.mly"
+# 17 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.mly"
                                       ( (_1 , _3) )
-# 177 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.ml"
-               : string * Formule.formule))
+# 177 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.ml"
+               : string * Proof_lib.Formule.formule))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 0 : string) in
     Obj.repr(
-# 20 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.mly"
+# 20 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.mly"
                                       (_1)
-# 184 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.ml"
+# 184 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.ml"
                : 'expr1))
 ; (fun __caml_parser_env ->
-    let _1 = (Parsing.peek_val __caml_parser_env 0 : Formule.formule) in
+    let _1 = (Parsing.peek_val __caml_parser_env 0 : Proof_lib.Formule.formule) in
     Obj.repr(
-# 23 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.mly"
+# 23 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.mly"
                                       ( _1 )
-# 191 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.ml"
+# 191 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.ml"
                : 'expr2))
 ; (fun __caml_parser_env ->
     let _2 = (Parsing.peek_val __caml_parser_env 1 : 'expr2) in
     Obj.repr(
-# 24 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.mly"
+# 24 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.mly"
                                       ( _2 )
-# 198 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.ml"
+# 198 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.ml"
                : 'expr2))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 2 : 'expr2) in
     let _3 = (Parsing.peek_val __caml_parser_env 0 : 'expr2) in
     Obj.repr(
-# 25 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.mly"
+# 25 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.mly"
                                       ( And(_1,_3) )
-# 206 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.ml"
+# 206 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.ml"
                : 'expr2))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 2 : 'expr2) in
     let _3 = (Parsing.peek_val __caml_parser_env 0 : 'expr2) in
     Obj.repr(
-# 26 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.mly"
+# 26 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.mly"
                                       ( Or(_1,_3) )
-# 214 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.ml"
+# 214 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.ml"
                : 'expr2))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 2 : 'expr2) in
     let _3 = (Parsing.peek_val __caml_parser_env 0 : 'expr2) in
     Obj.repr(
-# 27 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.mly"
+# 27 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.mly"
                                       ( Imp(_1,_3) )
-# 222 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.ml"
+# 222 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.ml"
                : 'expr2))
 ; (fun __caml_parser_env ->
     let _2 = (Parsing.peek_val __caml_parser_env 0 : 'expr2) in
     Obj.repr(
-# 28 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.mly"
+# 28 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.mly"
                                       ( Not _2)
-# 229 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\parser.ml"
+# 229 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.ml"
                : 'expr2))
 (* Entry main *)
 ; (fun __caml_parser_env -> raise (Parsing.YYexit (Parsing.peek_val __caml_parser_env 0)))
@@ -248,4 +248,4 @@ let yytables =
     Parsing.names_const=yynames_const;
     Parsing.names_block=yynames_block }
 let main (lexfun : Lexing.lexbuf -> token) (lexbuf : Lexing.lexbuf) =
-   (Parsing.yyparse yytables 1 lexfun lexbuf : string * Formule.formule)
+   (Parsing.yyparse yytables 1 lexfun lexbuf : string * Proof_lib.Formule.formule)

@@ -1,6 +1,6 @@
-open Mylib.Stored_props
-open Mylib.Ext_props
-open Mylib.Tactiques
+open Proof_store.Stored_props
+open Proof_store.Ext_props
+open Proof_lib.Tactiques
 
 let print_bool = function
 	|true -> (print_endline "true")

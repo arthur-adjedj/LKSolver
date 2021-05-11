@@ -1,4 +1,4 @@
-open Formule
+open Proof_lib.Formule
 
 let props = Hashtbl.create 100
 
@@ -14,12 +14,12 @@ let load_stored_props =
     while true do
       line := input_line file;
       print_endline !line; 
-      let result = Parser.main Lexer.token (Lexing.from_string !line) in
+      let result = Parser_stored.main Lexer_stored.token (Lexing.from_string !line) in
       Hashtbl.add props (fst result) (snd result);
       print_endline ((fst result)^" chargée")
     done;
   with 
-    |Lexer.Eof ->
+    |Lexer_stored.Eof ->
       close_in file
     |End_of_file ->
       close_in file

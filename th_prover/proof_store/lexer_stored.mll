@@ -1,6 +1,6 @@
 (* File lexer.mll *)
         {
-        open Parser        (* The type token is defined in parser.mli *)
+        open Parser_stored        (* The type token is defined in parser.mli *)
         exception Eof
         }
         rule token = parse

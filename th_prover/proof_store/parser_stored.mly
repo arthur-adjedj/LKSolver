@@ -1,7 +1,7 @@
  /* File parser.mly */
         %token SEP
         %token EOF
-        %token <Formule.formule> CHAR
+        %token <Proof_lib.Formule.formule> CHAR
         %token IMP AND OR  NOT
         %token LPAREN RPAREN
         %token EOL
@@ -9,7 +9,7 @@
         %left NOT       /* medium precedence */
         %token <string> STR
         %start main             /* the entry point */
-        %type <string * Formule.formule> main
+        %type <string * Proof_lib.Formule.formule> main
         %%
         main:
              expr1 SEP expr2 EOL EOF  { ($1 , $3) }
