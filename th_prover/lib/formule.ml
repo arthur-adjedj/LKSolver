@@ -32,5 +32,5 @@ let rec formule_to_string = function
     |Imp(a,b) -> "("^ (formule_to_string a) ^ ")->(" ^ (formule_to_string b) ^ ")"
 
 (*print *)
-let print f = print_string (formule_to_string f)
+let print_formule f = print_string (formule_to_string f)
 
