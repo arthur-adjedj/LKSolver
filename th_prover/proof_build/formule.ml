@@ -25,11 +25,19 @@ let is_f_equiv (f1:formule) (f2:formule):bool =
 (*donne un string représentant une formule f*)
 let rec formule_to_string = function    
     |Bottom ->  "┴"
+    |Var a -> Char.escaped a
+    |Not a -> "Not(" ^ (formule_to_string a) ^ ")"
+    |And(a,b) ->  "And("^ (formule_to_string a) ^ "," ^ (formule_to_string b) ^ ")"
+    |Or(a,b) -> "Or("^ (formule_to_string a) ^ "," ^ (formule_to_string b) ^ ")"
+    |Imp(a,b) -> "Imp("^ (formule_to_string a) ^ "," ^ (formule_to_string b) ^ ")"
+
+(*
+    |Bottom ->  "┴"
     |Var a -> Char.escaped (Char.uppercase_ascii a)
     |Not a -> "¬(" ^ (formule_to_string a) ^ ")"
     |And(a,b) ->  "("^ (formule_to_string a) ^ ")^(" ^ (formule_to_string b) ^ ")"
     |Or(a,b) -> "("^ (formule_to_string a) ^ ")v(" ^ (formule_to_string b) ^ ")"
-    |Imp(a,b) -> "("^ (formule_to_string a) ^ ")->(" ^ (formule_to_string b) ^ ")"
+    |Imp(a,b) -> "("^ (formule_to_string a) ^ ")->(" ^ (formule_to_string b) ^ ")"*)
 
 (*print *)
 let print_formule f = print_string (formule_to_string f)

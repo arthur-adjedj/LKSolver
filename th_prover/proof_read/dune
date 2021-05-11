@@ -1,4 +1,4 @@
 (library
  (name proof_read)
- (libraries base stdlib proof_lib)
+ (libraries base stdlib proof_build proof_store)
 )

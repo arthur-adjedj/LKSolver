@@ -1,7 +1,7 @@
 type token =
   | SEP
   | EOF
-  | CHAR of (Proof_lib.Formule.formule)
+  | CHAR of (Proof_build.Formule.formule)
   | IMP
   | AND
   | OR
@@ -158,7 +158,7 @@ let yyact = [|
 # 15 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.mly"
                                       ( (_1 , _3) )
 # 161 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.ml"
-               : string * Proof_lib.Formule.formule))
+               : string * Proof_build.Formule.formule))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 3 : 'expr1) in
     let _3 = (Parsing.peek_val __caml_parser_env 1 : 'expr2) in
@@ -166,7 +166,7 @@ let yyact = [|
 # 16 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.mly"
                                       ( (_1 , _3) )
 # 169 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.ml"
-               : string * Proof_lib.Formule.formule))
+               : string * Proof_build.Formule.formule))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 3 : 'expr1) in
     let _3 = (Parsing.peek_val __caml_parser_env 1 : 'expr2) in
@@ -174,7 +174,7 @@ let yyact = [|
 # 17 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.mly"
                                       ( (_1 , _3) )
 # 177 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.ml"
-               : string * Proof_lib.Formule.formule))
+               : string * Proof_build.Formule.formule))
 ; (fun __caml_parser_env ->
     let _1 = (Parsing.peek_val __caml_parser_env 0 : string) in
     Obj.repr(
@@ -183,7 +183,7 @@ let yyact = [|
 # 184 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.ml"
                : 'expr1))
 ; (fun __caml_parser_env ->
-    let _1 = (Parsing.peek_val __caml_parser_env 0 : Proof_lib.Formule.formule) in
+    let _1 = (Parsing.peek_val __caml_parser_env 0 : Proof_build.Formule.formule) in
     Obj.repr(
 # 23 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\lib\proof_store\parser_stored.mly"
                                       ( _1 )
@@ -248,4 +248,4 @@ let yytables =
     Parsing.names_const=yynames_const;
     Parsing.names_block=yynames_block }
 let main (lexfun : Lexing.lexbuf -> token) (lexbuf : Lexing.lexbuf) =
-   (Parsing.yyparse yytables 1 lexfun lexbuf : string * Proof_lib.Formule.formule)
+   (Parsing.yyparse yytables 1 lexfun lexbuf : string * Proof_build.Formule.formule)

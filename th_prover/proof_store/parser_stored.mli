@@ -1,7 +1,7 @@
 type token =
   | SEP
   | EOF
-  | CHAR of (Proof_lib.Formule.formule)
+  | CHAR of (Proof_build.Formule.formule)
   | IMP
   | AND
   | OR
@@ -12,4 +12,4 @@ type token =
   | STR of (string)
 
 val main :
-  (Lexing.lexbuf  -> token) -> Lexing.lexbuf -> string * Proof_lib.Formule.formule
+  (Lexing.lexbuf  -> token) -> Lexing.lexbuf -> string * Proof_build.Formule.formule

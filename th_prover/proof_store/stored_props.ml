@@ -1,22 +1,21 @@
-open Proof_lib.Formule
+open Proof_build.Formule
 
 let props = Hashtbl.create 100
 
-let stored_direc = "C:\\Users\\aarth\\IdeaProjects\\Theorem_prover\\th_prover\\lib\\stored_props.txt"
+let stored_direc = "C:\\Users\\aarth\\IdeaProjects\\Theorem_prover\\th_prover\\proof_store\\stored_props.txt"
 
 
 (*recharge props*)
-let load_stored_props = 
+let load_stored_props print = 
   Hashtbl.clear props;
   let line = ref "" in
   let file = open_in stored_direc in
   try
     while true do
       line := input_line file;
-      print_endline !line; 
       let result = Parser_stored.main Lexer_stored.token (Lexing.from_string !line) in
       Hashtbl.add props (fst result) (snd result);
-      print_endline ((fst result)^" chargée")
+      if print then print_endline ((fst result)^" chargée")
     done;
   with 
     |Lexer_stored.Eof ->
