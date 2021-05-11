@@ -30,6 +30,7 @@ let test fa l = let p =
   print_proof p; print_endline "";
   is_complete p
 
+(*ajout au stockage des propriétés booléennes standardes*)
 let add_std_props = 
 add "identite" (Imp(Var 'a',Var 'a')) [imp_droite 0;axiom];
 add "tiers_exclu"  (Or(Var 'a',Not(Var 'a'))) [or_droite 0;not_droite 1;axiom];

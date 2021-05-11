@@ -8,6 +8,8 @@ exception Incomplete_or_wrong_proof
 exception Already_exists
 exception Wrong_sequent of ((sequent list) * string)
 
+
+(*ajoute une propriété str : f à a liste*)
 let add str f tacts =
   load_stored_props;
   if not (is_complete (List.fold_left apply (init ([||],[|f|])) tacts)) then (
@@ -26,6 +28,7 @@ let add str f tacts =
     end
 
 
+(*tactique d'emploi d'une propriété déjà prouvée et stockée*)
 let ext name s =
   let pattern = Hashtbl.find props name in
   if not (is_s_equiv ([||],[|pattern|]) s) then

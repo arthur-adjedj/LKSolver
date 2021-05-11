@@ -4,6 +4,8 @@ let props = Hashtbl.create 100
 
 let stored_direc = "C:\\Users\\aarth\\IdeaProjects\\Theorem_prover\\th_prover\\lib\\stored_props.txt"
 
+
+(*recharge props*)
 let load_stored_props = 
   Hashtbl.clear props;
   let line = ref "" in
