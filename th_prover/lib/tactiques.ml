@@ -13,11 +13,6 @@ let axiom s =
 		raise (Wrong_sequent ([s],"Wrong_sequent"))
 	else ([],"axiom")
 
-
-
-
-
-
 let aff_gauche i (gf,df) = 
 	if i> (Array.length gf ) then
 		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent"))
@@ -81,7 +76,6 @@ let contr_droite i j (gf,df) =
 
 
 (*pour la coupure, c est un couple de bool arrays pour séparer les hypos et concls en deux*)
-(*/!\ pas encore testée*)
 let coupure f c s = 
 	if (Array.length (fst c) <> Array.length (fst s)) || (Array.length (snd c) <> Array.length (snd s)) 
 		then raise (Wrong_sequent ([s],"Wrong_sequent"))
@@ -141,7 +135,7 @@ let not_gauche i (gf,df) =
 				dres.(j) <- df.(j)
 			done;
 			dres.(n2) <- (un_not gf.(i));
-			([(gres,dres)],"┐ gauche "^(string_of_int i))
+			([(gres,dres)],"┐gauche "^(string_of_int i))
 		end
 
 
@@ -164,7 +158,7 @@ let not_droite i (gf,df)=
 				gres.(j) <- gf.(j)
 			done;
 			gres.(n1) <- (un_not df.(i));
-			([(gres,dres)],"┐ droite "^(string_of_int i))
+			([(gres,dres)],"┐droite "^(string_of_int i))
 		end		
 
 
@@ -186,7 +180,7 @@ let and_gauche i (gf,df)=
 			done;
 			gres.(i) <- fst (un_and gf.(i)) ;
 			gres.(i+1) <- snd (un_and gf.(i));
-			([(gres,dres)],"^ gauche "^(string_of_int i))
+			([(gres,dres)],"^gauche "^(string_of_int i))
 		end
 
 
@@ -203,7 +197,7 @@ let and_droite i (gf,df) =
 			and gres2 = Array.copy gf in
 			dres1.(i) <- fst (un_and df.(i));
 			dres2.(i) <- snd (un_and df.(i));
-			([(gres1,dres1);(gres2,dres2)],"^ droite "^(string_of_int i))
+			([(gres1,dres1);(gres2,dres2)],"^droite "^(string_of_int i))
 		end
 	
 
@@ -220,7 +214,7 @@ let or_gauche i (gf,df) :((sequent list) * string)=
 			and dres2 = Array.copy df in
 			gres1.(i) <- fst (un_or gf.(i)) ;
 			gres2.(i) <- snd (un_or gf.(i));
-			([(gres1,dres1);(gres2,dres2)],"v gauche "^(string_of_int i))
+			([(gres1,dres1);(gres2,dres2)],"vgauche "^(string_of_int i))
 		end
 
 
@@ -242,7 +236,7 @@ let or_droite i (gf,df) :((sequent list) * string)=
 			done;
 			dres.(i) <- fst (un_or df.(i)) ;
 			dres.(i+1) <- snd (un_or df.(i));
-			([(gres,dres)],"v droite "^(string_of_int i))
+			([(gres,dres)],"vdroite "^(string_of_int i))
 		end
 
 
@@ -269,7 +263,7 @@ let imp_gauche i (gf,df) :((sequent list) * string)=
 				dres1.(j) <-df.(j)
 			done;
 			dres1.(n2) <- fst (un_imp gf.(i));
-			([(gres1,dres1);(gres2,dres2)],"-> gauche "^(string_of_int i))
+			([(gres1,dres1);(gres2,dres2)],"->gauche "^(string_of_int i))
 		end
 
 
@@ -288,6 +282,6 @@ let imp_droite i	(gf,df) :((sequent list) * string)=
 				gres.(j) <- gf.(j)
 			done;
 			gres.(n1) <- fst (un_imp df.(i));
-			([(gres,dres)], "-> droite "^(string_of_int i))
+			([(gres,dres)], "->droite "^(string_of_int i))
 		end
 			
