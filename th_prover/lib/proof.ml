@@ -10,33 +10,28 @@ exception Proof_complete of proof
 let apply (p:proof) (t:tactique):proof =
     let last = fst (List.hd p) in
     if is_empty last then raise (Proof_complete p)
-
     else 
       begin
-        if is_current_empty last then 
-          begin
-            let next_s = t (List.hd last.queue) in
-            let next = if snd next_s = "axiom" then {current = Empty;
-                                        queue = List.tl last.queue}
-                       else            {current = Seq (List.hd (fst next_s));
-                                        queue = (List.tl (fst next_s) @ (List.tl last.queue))}
-            in  print_state next; ((next,"")::(last,snd next_s)::(List.tl p))
-          end
-        else
-          begin
-            let next_s = (match last.current with | Seq a -> (t a)) in
-            let next = if snd next_s = "axiom" then {current = Empty;
-                                        queue = last.queue}
-                           else        {current = Seq (List.hd (fst next_s));
-                                        queue = (List.tl (fst next_s)) @ last.queue}
-            in  print_state next; ((next,"")::(last,snd next_s)::(List.tl p))
-          end
+        let next = t (List.hd last) in
+        ((fst next)@(List.tl last),"")::(last,snd next)::(List.tl p)
       end
       
-let init (s:sequent):proof =
-    let state = {current = Seq s;
-                 queue = []}
-    in [(state,"")]
+let init (s:sequent):proof = [([s],"")]
 
 
 let is_complete p = is_empty (fst (List.hd  p))    
+
+let rec print_proof p = match p with
+    |[] -> ()
+    |(st,i)::t -> let strings = List.rev(strings_of_state st) in
+                  if i="" then (List.iter (fun l -> print_string l; print_string "       ") (strings);print_endline "")
+                  else 
+                    begin 
+                      let lens = List.map (fun str -> String.make (String.length str) '-') strings in 
+                      print_string (List.hd lens);List.iter (fun l -> print_string "    ";print_string l) (List.tl lens); print_string "<- ";print_endline i;
+                      List.iter (fun l -> print_string l; print_string "       ") (strings);print_endline ""
+                    end;
+                    print_proof t
+
+
+
