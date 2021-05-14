@@ -7,11 +7,13 @@
 
         %token <Proof_build.Formule.formule> CHAR
         %token EOF
-        %token IMP AND OR NOT
+        %token AND OR NOT IMP 
         %token LPAREN RPAREN
 
-        %left IMP AND OR     /* lowest precedence */
+        %left IMP
+        %left AND OR   /* lowest precedence */
         %left NOT       /* medium precedence */
+        
         %token EOL
 
         %token <int> INT
@@ -69,8 +71,8 @@
         prop:
             CHAR                      { $1 }
           | LPAREN prop RPAREN       { $2 }
+          | prop IMP prop           { Imp($1,$3) }
           | prop AND prop           { And($1,$3) }
           | prop OR prop            { Or($1,$3) }
-          | prop IMP prop           { Imp($1,$3) }
           | NOT prop                 { Not $2}
         ;

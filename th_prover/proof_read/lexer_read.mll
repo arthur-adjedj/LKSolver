@@ -26,9 +26,9 @@
           | 'v'                                                 { OR }
           | (['a'-'z']|['0'-'9']|['_']|['-'])++ as s            { NAME(s) }
           | ['A'-'Z'] as c                                      { CHAR(Var (Char.lowercase_ascii c)) }
+          | ("->")                                              { IMP }
           | '^'                                                 { AND }
           | ("-|")|("¬")                                        { NOT }
-          | ("->")                                              { IMP }
           | '('                                                 { LPAREN }
           | ')'                                                 { RPAREN }
           

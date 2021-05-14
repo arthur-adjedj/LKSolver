@@ -1,5 +1,1 @@
-proof double_neg A->-|-|A
-->d 0
-notd 0
-notg 1
-axiom
+proof test ((A -> B) ^ -|B) -> -|A

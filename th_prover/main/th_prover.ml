@@ -1,6 +1,7 @@
 open Proof_build.Proof
 open Proof_read.Read_proof
 open Proof_store.Ext_props
+open Proof_build.Auto_proof
 
 open Cmdliner
 
@@ -22,14 +23,22 @@ let verify_proof d =
 		add a b c;
 	print_endline ("formule "^a^" ajoutée à la base de donnée !") )
 
+
+let auto_complete_proof d =
+	let ((_,b),_) = load_proof ~print:false d in
+	let (proved,p) = auto_check (init ([||],[|b|])) in
+	print_proof p;
+	print_bool (proved)
+
+
 let proof_directory =
-  let doc = "The message to print." in
+  let doc = "doc" in
   Arg.(value & pos 0 string direc & info []  ~docv:"PROOF DIRECTORY" ~doc)
 
-let test_proof =Term.(const verify_proof  $ proof_directory)
+let test_proof =Term.(const auto_complete_proof  $ proof_directory)
 
 let info =
-	let doc = "print a customizable message repeatedly" in
+	let doc = "doc" in
 	let man = [
 		`S Manpage.s_bugs;
 		`P "aarthuur01@gmail.com" ]

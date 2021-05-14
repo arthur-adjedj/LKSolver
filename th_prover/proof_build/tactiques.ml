@@ -13,8 +13,15 @@ let axiom s =
 		raise (Wrong_sequent ([s],"Wrong_sequent, axiom"))
 	else ([],"axiom")
 
+let reduc i j (gf,df) = 
+	if (i >= (Array.length gf)) || (j >= (Array.length df)) || not (is_f_equiv gf.(i) df.(j)) then
+		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent, reduc "^(string_of_int i)^" "^(string_of_int j)))
+	else ([],"reduc "^(string_of_int i)^" "^(string_of_int j))
+
+
+
 let aff_gauche i (gf,df) = 
-	if i> (Array.length gf ) then
+	if i>= (Array.length gf ) then
 		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent, affg"))
 	else 
 		begin
@@ -29,7 +36,7 @@ let aff_gauche i (gf,df) =
 		end
 
 let aff_droite i (gf,df) = 
-	if i> (Array.length df) then
+	if i>= (Array.length df) then
 		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent, affd"))
 	else 
 		begin
@@ -44,7 +51,7 @@ let aff_droite i (gf,df) =
 		end
 
 let contr_gauche i j (gf,df) =
-	if i> (Array.length gf) || j> (Array.length gf) || gf.(i) <> df.(i) || i=j then
+	if i>= (Array.length gf) || j>= (Array.length gf) || gf.(i) <> df.(i) || i=j then
 		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent, ><g"))
 else
 	begin
@@ -60,7 +67,7 @@ else
 
 
 let contr_droite i j (gf,df) =
-	if i> (Array.length df) || j> (Array.length df) || df.(i) <> df.(i) || i=j then
+	if i>= (Array.length df) || j>= (Array.length df) || df.(i) <> df.(i) || i=j then
 		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent, ><d"))
 	else
 		begin
@@ -118,7 +125,7 @@ let coupure f c s =
 
 let not_gauche i (gf,df) =
 	let pattern = Not(Var 'a') in
-	if i> (Array.length gf ) || not (is_f_equiv pattern gf.(i)) then
+	if i>= (Array.length gf ) || not (is_f_equiv pattern gf.(i)) then
 		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent, ┐g"))
 	else 
 		begin
@@ -165,7 +172,7 @@ let not_droite i (gf,df)=
 
 let and_gauche i (gf,df)=
 	let pattern =  And(Var 'a',Var 'b') in
-	if i> (Array.length gf ) || not (is_f_equiv pattern gf.(i)) then
+	if i>= (Array.length gf ) || not (is_f_equiv pattern gf.(i)) then
 		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent, ^g"))
 	else
 		begin
@@ -187,7 +194,7 @@ let and_gauche i (gf,df)=
 
 let and_droite i (gf,df) =
 	let pattern =  And(Var 'a',Var 'b') in
-	if i> (Array.length df ) || not (is_f_equiv pattern df.(i)) then
+	if i>= (Array.length df ) || not (is_f_equiv pattern df.(i)) then
 		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent, ^d"))
 	else
 		begin
@@ -204,7 +211,7 @@ let and_droite i (gf,df) =
 
 let or_gauche i (gf,df) :((sequent list) * string)=
 	let pattern =  Or(Var 'a',Var 'b') in
-	if i> (Array.length gf ) || not (is_f_equiv pattern gf.(i)) then
+	if i>= (Array.length gf ) || not (is_f_equiv pattern gf.(i)) then
 		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent, vg"))
 	else
 		begin
@@ -221,7 +228,7 @@ let or_gauche i (gf,df) :((sequent list) * string)=
 
 let or_droite i (gf,df) :((sequent list) * string)=
 	let pattern =  Or(Var 'a',Var 'b') in 
-	if i> (Array.length df ) || not (is_f_equiv pattern df.(i)) then (
+	if i>= (Array.length df ) || not (is_f_equiv pattern df.(i)) then (
 		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent, vd")) )
 	else
 		begin
@@ -243,7 +250,7 @@ let or_droite i (gf,df) :((sequent list) * string)=
 
 let imp_gauche i (gf,df) :((sequent list) * string)=
 	let pattern = Imp(Var 'a',Var 'b') in
-	if i> (Array.length gf) || not (is_f_equiv pattern gf.(i)) then
+	if i>= (Array.length gf) || not (is_f_equiv pattern gf.(i)) then
 		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent, ->g"))
 	else
 		begin
@@ -270,7 +277,7 @@ let imp_gauche i (gf,df) :((sequent list) * string)=
 
 let imp_droite i	(gf,df) :((sequent list) * string)=
 	let pattern = Imp(Var 'a',Var 'b') in
-	if i> (Array.length df) || not (is_f_equiv pattern df.(i)) then
+	if i>= (Array.length df) || not (is_f_equiv pattern df.(i)) then
 		raise (Wrong_sequent ([(gf,df)],"Wrong_sequent, ->d"))
 	else
 		begin
