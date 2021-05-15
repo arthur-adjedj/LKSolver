@@ -10,18 +10,18 @@
           
           | ("axiom")                                           {AXIOM}
           | ("ext")                                             {EXT}
-          | ("affg")                                            {AFFG}
-          | ("affd")                                            {AFFD}
-          | ("><g")                                             {CONTRG}
-          | ("><d")                                             {CONTRD}
-          | ("notg")|("¬g")                                     {NOTG}
-          | ("notd")|("¬d")                                     {NOTD}
-          | ("^g")                                              {ANDG}
-          | ("^d")                                              {ANDD}
-          | ("vg")                                              {ORG}
-          | ("vd")                                              {ORD}
-          | ("->g")                                             {IMPG}
-          | ("->d")                                             {IMPD}
+          | ("affg")|("wl")                                            {AFFG}
+          | ("affd")|("wr")                                           {AFFD}
+          | ("><g")|("cl")                                             {CONTRG}
+          | ("><d")|("cr")                                               {CONTRD}
+          | ("notg")|("¬g")|("notl")|("¬l")                                     {NOTG}
+          | ("notd")|("¬d")|("notr")|("¬r")                                      {NOTD}
+          | ("^g")|("^l")                                              {ANDG}
+          | ("^d")|("^r")                                           {ANDD}
+          | ("vg")|("vl")                                              {ORG}
+          | ("vd")|("vr")                                              {ORD}
+          | ("->g")|("->l")                                             {IMPG}
+          | ("->d")|("->r")                                             {IMPD}
 
           | 'v'                                                 { OR }
           | (['a'-'z']|['0'-'9']|['_']|['-'])++ as s            { NAME(s) }

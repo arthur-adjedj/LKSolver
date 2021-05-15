@@ -16,7 +16,7 @@ let add str f =
   )
   else
     begin
-      let file = open_out_gen [Open_append] 0o640 "C:\\Users\\aarth\\IdeaProjects\\Theorem_prover\\th_prover\\proof_store\\stored_props.txt" in 
+      let file = open_out_gen [Open_creat;Open_append] 0o640 "stored_props" in 
       Printf.fprintf file "%s\n" (str^" : "^(formule_to_string f));
       close_out file;
       print_endline ("Propriété \""^str^"\" ajoutée au répertoire avec succès !")

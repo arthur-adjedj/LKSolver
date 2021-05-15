@@ -13,7 +13,6 @@ let print_bool = function
 let develop f l = List.fold_left apply (init ([||],[|f|])) l
 
 
-let direc = "C:\\Users\\aarth\\IdeaProjects\\Theorem_prover\\th_prover\\proof_read\\test"
 
 let verify_proof d =
 	let ((a,b),c) = load_proof d in
@@ -42,11 +41,11 @@ let auto_complete_proof d =
 
 let proof_directory =
   let doc = "doc" in
-  Arg.(value & pos 0 string direc & info []  ~docv:"PROOF DIRECTORY" ~doc)
+  Arg.(value & pos 0 string "" & info []  ~docv:"PROOF DIRECTORY" ~doc)
 
 let manual_mode =
 	let doc = "Put true if you want the program to verify that the whole proof is correct instead of verifiying the correctness of the formula itself" in
-	Arg.(value & opt bool false & info []  ~docv:"Manual mode" ~doc)
+	Arg.(value & opt bool false & info ["m"]  ~docv:"Manual mode" ~doc)
 
 let main b dir = if b then verify_proof dir else auto_complete_proof dir
 
