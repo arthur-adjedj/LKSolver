@@ -4,3 +4,4 @@
 .merlin
 pr_assistant.code-workspace
 main.lnk
+.gitignore
