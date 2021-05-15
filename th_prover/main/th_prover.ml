@@ -1,3 +1,4 @@
+open Proof_build.Formule
 open Proof_build.Proof
 open Proof_read.Read_proof
 open Proof_store.Ext_props
@@ -20,28 +21,45 @@ let verify_proof d =
 	print_proof p;
 	print_bool (is_complete p);
 	if is_complete p then (
-		add a b c;
-	print_endline ("formule "^a^" ajoutée à la base de donnée !") )
+		add a b;
+	print_endline ("formule "^a^" ajoutée au registre !") )
 
 
 let auto_complete_proof d =
-	let ((_,b),_) = load_proof ~print:false d in
+	print_endline "";
+	let ((a,b),_) = load_proof d in
+	print_endline "tentative de résolution automatique de la propriété: ";
+	print_formule b;
+	print_endline "";
 	let (proved,p) = auto_check (init ([||],[|b|])) in
 	print_proof p;
-	print_bool (proved)
+	if proved then (
+		add a b;
+		print_endline ("formule "^a^" correcte et ajouté au registre")
+	)
+	else print_endline "formule incorrecte"
 
 
 let proof_directory =
   let doc = "doc" in
   Arg.(value & pos 0 string direc & info []  ~docv:"PROOF DIRECTORY" ~doc)
 
-let test_proof =Term.(const auto_complete_proof  $ proof_directory)
+let manual_mode =
+	let doc = "Put true if you want the program to verify that the whole proof is correct instead of verifiying the correctness of the formula itself" in
+	Arg.(value & opt bool false & info []  ~docv:"Manual mode" ~doc)
+
+let main b dir = if b then verify_proof dir else auto_complete_proof dir
+
+
+let test_proof =Term.(const main $ manual_mode $  proof_directory)
+
+
 
 let info =
 	let doc = "doc" in
 	let man = [
 		`S Manpage.s_bugs;
-		`P "aarthuur01@gmail.com" ]
+		`P "arthur.adjedj@gmail.com" ]
 	in
 	Term.info "proof checker" ~version:"0.0.1" ~doc ~exits:Term.default_exits ~man
 

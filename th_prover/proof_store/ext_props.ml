@@ -1,5 +1,4 @@
 open Proof_build.Formule
-open Proof_build.Proof
 open Stored_props
 open Proof_build.Sequent
 
@@ -9,12 +8,8 @@ exception Wrong_sequent of ((sequent list) * string)
 
 
 (*ajoute une propriété str : f à a liste*)
-let add str f tacts =
+let add str f =
   load_stored_props false;
-  if not (is_complete (List.fold_left apply (init ([||],[|f|])) tacts)) then (
-    print_endline "Preuve incomplète ou fausse. Celle-ci n'a pas pu être ajoutée au répertoire";
-    raise Incomplete_or_wrong_proof )
-  else (
   if Hashtbl.mem props str then (
     print_endline "Propriété déjà enregistrée !";
     raise Already_exists 
@@ -26,7 +21,6 @@ let add str f tacts =
       close_out file;
       print_endline ("Propriété \""^str^"\" ajoutée au répertoire avec succès !")
     end
-      )
 
 
 (*tactique d'emploi d'une propriété déjà prouvée et stockée*)
