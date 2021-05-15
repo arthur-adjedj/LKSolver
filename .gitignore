@@ -1,7 +1,0 @@
-/.opam
-/_build
-/.vscode
-.merlin
-pr_assistant.code-workspace
-main.lnk
-.gitignore
