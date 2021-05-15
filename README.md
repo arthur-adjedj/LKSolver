@@ -50,6 +50,8 @@ There are a few rules available. In order to make things more readable, the perm
 
 -Reduction i j : `reduc i j` (if A is present on both sides, it makes all the weakening/contractions in one go)
 
+-Extern : `ext <name>` with `<name>` being the name of a previously saved, already proved proposition
+
 
 ### Automatic mode
   
@@ -93,5 +95,4 @@ formule modus_tollens correcte et ajouté au registre
 
 The text is currently in french, sorry about that.
 The command will also display the tactics used to reduce the first expression.
-
-
+The proposition being right, it was saved and can now be used again for further proofs using `ext modus_tollens` 
