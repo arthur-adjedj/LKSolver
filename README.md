@@ -59,7 +59,7 @@ If you want to simply verify if a proposition is correct, you can simply write `
 
 Otherwise, if you want to also check if your own sequence of rules work, you can add `-m true` in the command
 
-### EXEMPLE
+### Exemple 
 
 Let's try to verify if the following property is true :  `((A -> B) ^ ¬B) -> ¬A`
 This property is refered to as the `Modus Tollens`, let's write in a certain file called `modus_tollens` the following:
