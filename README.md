@@ -1,8 +1,9 @@
-# Theorem_prover
+# Proof assistant
 
-A simple experimental theorem prover, being made for academic purposes.
-The prover has a basic syntax, as well as tactics in order 
-The main goal is to make it function on basic boolean logic, before possibly building up to other cases such as natural numbers
+A simple experimental proof assistant, being made for academic purposes.
+It is based on sequent calculus LK
+The prover has basic syntax and rules, and doesn't yet work with "forall" and "exists" rules.
+The main goal is to make it function on basic boolean propositions, before possibly building up to other cases such as natural numbers.
 
 ## How it currently works
 
