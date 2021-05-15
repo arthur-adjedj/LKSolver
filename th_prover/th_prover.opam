@@ -1,5 +1,5 @@
 opam-version: "2.0"
-name: "th_prover"
+name: "pr_assistant"
 version: "0.1"
 synopsis: "Proof of concept theorem prover, academic project"
 description: """

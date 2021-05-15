@@ -55,7 +55,7 @@ There are a few rules available. In order to make things more readable, the perm
 
 ### Automatic mode
   
-If you want to simply verify if a proposition is correct, you can simply write `proof <name> <formula>` in a file, and check it using `th_prover <dir>` in your shell, with `<dir>` being the directory in which the formula is written. 
+If you want to simply verify if a proposition is correct, you can simply write `proof <name> <formula>` in a file, and check it using `pr_assistant <dir>` in your shell, with `<dir>` being the directory in which the formula is written. 
 
 Otherwise, if you want to also check if your own sequence of rules work, you can add `-m true` in the command
 
@@ -69,7 +69,7 @@ proof modus_tollens ((A -> B) ^ ¬B) -> ¬A
 
 ```
 
-by running `th_prover modus_ponens`, we get the following result:
+by running `pr_assistant modus_ponens`, we get the following result:
 
 ```
 tentative de résolution automatique de la propriété:

@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"ocaml.sandbox": {
+			"kind": "opam",
+			"switch": "4.11.1+mingw64c"
+		},
+		"git.ignoreLimitWarning": true
+	}
+}

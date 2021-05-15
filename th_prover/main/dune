@@ -1,4 +1,4 @@
 (executable
- (name th_prover)
+ (name pr_assistant)
  (libraries stdlib base graphics cmdliner proof_build proof_store proof_read)
 )

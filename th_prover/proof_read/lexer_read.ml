@@ -1,9 +1,9 @@
-# 1 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 1 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
          
         open Parser_read       (* The type token is defined in parser.mli *)
         exception Eof
         
-# 7 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 7 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 let __ocaml_lex_tables = {
   Lexing.lex_base =
    "\000\000\229\255\230\255\231\255\235\255\098\000\126\000\209\000\
@@ -492,154 +492,154 @@ let rec token lexbuf =
 and __ocaml_lex_token_rec lexbuf __ocaml_lex_state =
   match Lexing.engine __ocaml_lex_tables __ocaml_lex_state lexbuf with
       | 0 ->
-# 6 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 6 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 ( token lexbuf )
-# 498 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 498 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 1 ->
-# 7 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 7 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 ( EOL )
-# 503 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 503 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 2 ->
 let
-# 8 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 8 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                          i
-# 509 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 509 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 = Lexing.sub_lexeme_char lexbuf lexbuf.Lexing.lex_start_pos in
-# 8 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 8 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 (INT(int_of_string (String.make 1 i)))
-# 513 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 513 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 3 ->
-# 9 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 9 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 (BEGIN)
-# 518 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 518 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 4 ->
-# 11 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 11 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 (AXIOM)
-# 523 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 523 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 5 ->
-# 12 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 12 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 (EXT)
-# 528 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 528 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 6 ->
-# 13 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 13 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 (AFFG)
-# 533 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 533 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 7 ->
-# 14 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 14 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 (AFFD)
-# 538 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 538 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 8 ->
-# 15 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 15 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 (CONTRG)
-# 543 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 543 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 9 ->
-# 16 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 16 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 (CONTRD)
-# 548 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 548 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 10 ->
-# 17 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 17 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                  (NOTG)
-# 553 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 553 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 11 ->
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                  (NOTD)
-# 558 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 558 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 12 ->
-# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 (ANDG)
-# 563 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 563 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 13 ->
-# 20 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 20 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 (ANDD)
-# 568 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 568 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 14 ->
-# 21 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 21 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 (ORG)
-# 573 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 573 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 15 ->
-# 22 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 22 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 (ORD)
-# 578 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 578 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 16 ->
-# 23 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 23 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 (IMPG)
-# 583 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 583 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 17 ->
-# 24 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 24 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 (IMPD)
-# 588 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 588 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 18 ->
-# 26 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 26 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 ( OR )
-# 593 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 593 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 19 ->
 let
-# 27 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 27 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                    s
-# 599 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 599 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 = Lexing.sub_lexeme lexbuf lexbuf.Lexing.lex_start_pos lexbuf.Lexing.lex_curr_pos in
-# 27 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 27 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 ( NAME(s) )
-# 603 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 603 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 20 ->
 let
-# 28 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 28 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                          c
-# 609 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 609 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 = Lexing.sub_lexeme_char lexbuf lexbuf.Lexing.lex_start_pos in
-# 28 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 28 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 ( CHAR(Var (Char.lowercase_ascii c)) )
-# 613 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 613 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 21 ->
-# 29 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 29 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 ( IMP )
-# 618 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 618 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 22 ->
-# 30 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 30 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 ( AND )
-# 623 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 623 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 23 ->
-# 31 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 31 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                  ( NOT )
-# 628 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 628 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 24 ->
-# 32 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 32 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 ( LPAREN )
-# 633 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 633 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 25 ->
-# 33 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 33 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 ( RPAREN )
-# 638 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 638 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 26 ->
-# 35 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.mll"
+# 35 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
                                                                 ( EOF )
-# 643 "C:\Users\aarth\IdeaProjects\Theorem_prover\th_prover\proof_read\lexer_read.ml"
+# 643 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | __ocaml_lex_state -> lexbuf.Lexing.refill_buff lexbuf;
       __ocaml_lex_token_rec lexbuf __ocaml_lex_state
