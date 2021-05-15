@@ -33,7 +33,7 @@ The syntax of formulas is as follow:
 
 Parenthesis are allowed and usable in formula names
 
-There are a few tactics available. In order to make things more readable, the permutation is not implemented, you can instead act on the i-th element of the left or right side of a sequent as you wish:
+There are a few rules available. In order to make things more readable, the permutation is not implemented, you can instead act on the i-th element of the left or right side of a sequent as you wish:
 -Axiom : `axiom`
 
 -Left/Right Weakening i : `wl i` / `wr i` 
@@ -55,7 +55,7 @@ There are a few tactics available. In order to make things more readable, the pe
   
 If you want to simply verify if a proposition is correct, you can simply write `proof <name> <formula>` in a file, and check it using `th_prover <dir>` in your shell, with `<dir>` being the directory in which the formula is written. 
 
-Otherwise, if you want to also check if your own sequence of tactics work, you can add `-m true` in the command
+Otherwise, if you want to also check if your own sequence of rules work, you can add `-m true` in the command
 
 ### EXEMPLE
 
