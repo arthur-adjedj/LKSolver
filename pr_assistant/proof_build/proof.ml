@@ -18,7 +18,6 @@ let apply (p:proof) (t:tactique):proof =
       
 let init (s:sequent):proof = [([s],"")]
 
-
 let is_complete p = is_empty (fst (List.hd  p))    
 
 let rec print_proof p = match p with
