@@ -5,6 +5,7 @@ module MenhirBasics = struct
   
   type token = 
     | RPAREN
+    | REDUC
     | ORG
     | ORD
     | OR
@@ -14,13 +15,13 @@ module MenhirBasics = struct
     | NAME of (
 # 6 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (string)
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
   )
     | LPAREN
     | INT of (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 24 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 25 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
   )
     | IMPG
     | IMPD
@@ -33,7 +34,7 @@ module MenhirBasics = struct
     | CHAR of (
 # 8 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (Proof_build.Formule.formule)
-# 37 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 38 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
   )
     | BEGIN
     | AXIOM
@@ -58,8 +59,8 @@ type _menhir_env = {
 }
 
 and _menhir_state = 
-  | MenhirState53
-  | MenhirState26
+  | MenhirState56
+  | MenhirState29
   | MenhirState17
   | MenhirState12
   | MenhirState10
@@ -72,291 +73,288 @@ and _menhir_state =
           
             open Proof_build.Formule
         
-# 76 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 77 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
 
 let rec _menhir_goto_tacts : _menhir_env -> 'ttv_tail -> _menhir_state -> (
-# 38 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 40 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique list)
-# 81 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 82 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
 ) -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s _v ->
     match _menhir_s with
     | MenhirState17 ->
         let (_menhir_env : _menhir_env) = _menhir_env in
-        let (_menhir_stack : ('freshtv185) * (
-# 37 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+        let (_menhir_stack : ('freshtv195) * (
+# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (string * Proof_build.Formule.formule)
-# 90 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 91 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = Obj.magic _menhir_stack in
         let (_menhir_s : _menhir_state) = _menhir_s in
         let (_v : (
-# 38 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 40 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique list)
-# 96 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 97 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let (_menhir_env : _menhir_env) = _menhir_env in
-        let (_menhir_stack : ('freshtv183) * (
-# 37 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+        let (_menhir_stack : ('freshtv193) * (
+# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (string * Proof_build.Formule.formule)
-# 102 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 103 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = Obj.magic _menhir_stack in
         let (_ : _menhir_state) = _menhir_s in
         let ((_3 : (
-# 38 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 40 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique list)
-# 108 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 109 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) : (
-# 38 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 40 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique list)
-# 112 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 113 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let (_menhir_stack, (_2 : (
-# 37 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (string * Proof_build.Formule.formule)
-# 117 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 118 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ))) = _menhir_stack in
         let _v : (
-# 36 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 38 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               ((string * Proof_build.Formule.formule) * (Proof_build.Tactiques.tactique list))
-# 122 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 123 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
-# 43 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
-                                    ( ( _2 , _3 ) )
-# 126 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 45 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+                                     ( ( _2 , _3 ) )
+# 127 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         let (_menhir_env : _menhir_env) = _menhir_env in
-        let (_menhir_stack : 'freshtv181) = _menhir_stack in
+        let (_menhir_stack : 'freshtv191) = _menhir_stack in
         let (_v : (
-# 36 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 38 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               ((string * Proof_build.Formule.formule) * (Proof_build.Tactiques.tactique list))
-# 133 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 134 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let (_menhir_env : _menhir_env) = _menhir_env in
-        let (_menhir_stack : 'freshtv179) = Obj.magic _menhir_stack in
+        let (_menhir_stack : 'freshtv189) = Obj.magic _menhir_stack in
         let (_v : (
-# 36 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 38 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               ((string * Proof_build.Formule.formule) * (Proof_build.Tactiques.tactique list))
-# 140 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 141 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let (_menhir_env : _menhir_env) = _menhir_env in
-        let (_menhir_stack : 'freshtv177) = Obj.magic _menhir_stack in
+        let (_menhir_stack : 'freshtv187) = Obj.magic _menhir_stack in
         let ((_1 : (
-# 36 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 38 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               ((string * Proof_build.Formule.formule) * (Proof_build.Tactiques.tactique list))
-# 147 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 148 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) : (
-# 36 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 38 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               ((string * Proof_build.Formule.formule) * (Proof_build.Tactiques.tactique list))
-# 151 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 152 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
-        (Obj.magic _1 : 'freshtv178)) : 'freshtv180)) : 'freshtv182)) : 'freshtv184)) : 'freshtv186)
-    | MenhirState53 ->
+        (Obj.magic _1 : 'freshtv188)) : 'freshtv190)) : 'freshtv192)) : 'freshtv194)) : 'freshtv196)
+    | MenhirState56 ->
         let (_menhir_env : _menhir_env) = _menhir_env in
-        let (_menhir_stack : ('freshtv189 * _menhir_state * (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+        let (_menhir_stack : ('freshtv199 * _menhir_state * (
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 159 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 160 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ))) = Obj.magic _menhir_stack in
         let (_menhir_s : _menhir_state) = _menhir_s in
         let (_v : (
-# 38 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 40 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique list)
-# 165 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 166 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let (_menhir_env : _menhir_env) = _menhir_env in
-        let (_menhir_stack : ('freshtv187 * _menhir_state * (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+        let (_menhir_stack : ('freshtv197 * _menhir_state * (
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 171 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 172 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ))) = Obj.magic _menhir_stack in
         let (_ : _menhir_state) = _menhir_s in
         let ((_3 : (
-# 38 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 40 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique list)
-# 177 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 178 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) : (
-# 38 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 40 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique list)
-# 181 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 182 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let (_menhir_stack, _menhir_s, (_1 : (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 186 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 187 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ))) = _menhir_stack in
         let _v : (
-# 38 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 40 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique list)
-# 191 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 192 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
-# 68 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 72 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                     (_1::_3)
-# 195 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 196 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
-        _menhir_goto_tacts _menhir_env _menhir_stack _menhir_s _v) : 'freshtv188)) : 'freshtv190)
+        _menhir_goto_tacts _menhir_env _menhir_stack _menhir_s _v) : 'freshtv198)) : 'freshtv200)
     | _ ->
         _menhir_fail ()
 
 and _menhir_goto_tact : _menhir_env -> 'ttv_tail -> _menhir_state -> (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 204 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 205 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
 ) -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s _v ->
     let _menhir_stack = (_menhir_stack, _menhir_s, _v) in
     match _menhir_s with
-    | MenhirState26 ->
+    | MenhirState29 ->
         let (_menhir_env : _menhir_env) = _menhir_env in
-        let (_menhir_stack : ('freshtv165 * _menhir_state) * _menhir_state * (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+        let (_menhir_stack : ('freshtv175 * _menhir_state) * _menhir_state * (
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 214 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 215 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = Obj.magic _menhir_stack in
         ((assert (not _menhir_env._menhir_error);
         let _tok = _menhir_env._menhir_token in
         match _tok with
         | RPAREN ->
             let (_menhir_env : _menhir_env) = _menhir_env in
-            let (_menhir_stack : ('freshtv161 * _menhir_state) * _menhir_state * (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+            let (_menhir_stack : ('freshtv171 * _menhir_state) * _menhir_state * (
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 224 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 225 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) = Obj.magic _menhir_stack in
             ((let _menhir_env = _menhir_discard _menhir_env in
             let (_menhir_env : _menhir_env) = _menhir_env in
-            let (_menhir_stack : ('freshtv159 * _menhir_state) * _menhir_state * (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+            let (_menhir_stack : ('freshtv169 * _menhir_state) * _menhir_state * (
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 231 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 232 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) = Obj.magic _menhir_stack in
             ((let ((_menhir_stack, _menhir_s), _, (_2 : (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 236 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 237 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             ))) = _menhir_stack in
             let _v : (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 241 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 242 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             ) = 
-# 63 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 67 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                      (_2)
-# 245 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 246 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
              in
-            _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv160)) : 'freshtv162)
+            _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv170)) : 'freshtv172)
         | _ ->
             assert (not _menhir_env._menhir_error);
             _menhir_env._menhir_error <- true;
             let (_menhir_env : _menhir_env) = _menhir_env in
-            let (_menhir_stack : ('freshtv163 * _menhir_state) * _menhir_state * (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+            let (_menhir_stack : ('freshtv173 * _menhir_state) * _menhir_state * (
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 255 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 256 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) = Obj.magic _menhir_stack in
             ((let (_menhir_stack, _menhir_s, _) = _menhir_stack in
-            _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv164)) : 'freshtv166)
-    | MenhirState53 | MenhirState17 ->
+            _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv174)) : 'freshtv176)
+    | MenhirState56 | MenhirState17 ->
         let (_menhir_env : _menhir_env) = _menhir_env in
-        let (_menhir_stack : 'freshtv175 * _menhir_state * (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+        let (_menhir_stack : 'freshtv185 * _menhir_state * (
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 264 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 265 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = Obj.magic _menhir_stack in
         ((assert (not _menhir_env._menhir_error);
         let _tok = _menhir_env._menhir_token in
         match _tok with
         | EOF ->
             let (_menhir_env : _menhir_env) = _menhir_env in
-            let (_menhir_stack : 'freshtv169 * _menhir_state * (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+            let (_menhir_stack : 'freshtv179 * _menhir_state * (
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 274 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 275 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) = Obj.magic _menhir_stack in
             ((let (_menhir_env : _menhir_env) = _menhir_env in
-            let (_menhir_stack : 'freshtv167 * _menhir_state * (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+            let (_menhir_stack : 'freshtv177 * _menhir_state * (
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 280 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 281 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) = Obj.magic _menhir_stack in
             ((let (_menhir_stack, _menhir_s, (_1 : (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 285 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 286 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             ))) = _menhir_stack in
             let _v : (
-# 38 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 40 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique list)
-# 290 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 291 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             ) = 
-# 67 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 71 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                     ([_1])
-# 294 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 295 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
              in
-            _menhir_goto_tacts _menhir_env _menhir_stack _menhir_s _v) : 'freshtv168)) : 'freshtv170)
+            _menhir_goto_tacts _menhir_env _menhir_stack _menhir_s _v) : 'freshtv178)) : 'freshtv180)
         | EOL ->
             let (_menhir_env : _menhir_env) = _menhir_env in
-            let (_menhir_stack : 'freshtv171 * _menhir_state * (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+            let (_menhir_stack : 'freshtv181 * _menhir_state * (
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 302 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 303 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) = Obj.magic _menhir_stack in
             ((let _menhir_env = _menhir_discard _menhir_env in
             let _tok = _menhir_env._menhir_token in
             match _tok with
             | AFFD ->
-                _menhir_run46 _menhir_env (Obj.magic _menhir_stack) MenhirState53
+                _menhir_run49 _menhir_env (Obj.magic _menhir_stack) MenhirState56
             | AFFG ->
-                _menhir_run44 _menhir_env (Obj.magic _menhir_stack) MenhirState53
+                _menhir_run47 _menhir_env (Obj.magic _menhir_stack) MenhirState56
             | ANDD ->
-                _menhir_run42 _menhir_env (Obj.magic _menhir_stack) MenhirState53
+                _menhir_run45 _menhir_env (Obj.magic _menhir_stack) MenhirState56
             | ANDG ->
-                _menhir_run40 _menhir_env (Obj.magic _menhir_stack) MenhirState53
+                _menhir_run43 _menhir_env (Obj.magic _menhir_stack) MenhirState56
             | AXIOM ->
-                _menhir_run39 _menhir_env (Obj.magic _menhir_stack) MenhirState53
+                _menhir_run42 _menhir_env (Obj.magic _menhir_stack) MenhirState56
             | CONTRD ->
-                _menhir_run36 _menhir_env (Obj.magic _menhir_stack) MenhirState53
+                _menhir_run39 _menhir_env (Obj.magic _menhir_stack) MenhirState56
             | CONTRG ->
-                _menhir_run33 _menhir_env (Obj.magic _menhir_stack) MenhirState53
+                _menhir_run36 _menhir_env (Obj.magic _menhir_stack) MenhirState56
             | EOF ->
-                _menhir_run50 _menhir_env (Obj.magic _menhir_stack) MenhirState53
+                _menhir_run53 _menhir_env (Obj.magic _menhir_stack) MenhirState56
             | EXT ->
-                _menhir_run31 _menhir_env (Obj.magic _menhir_stack) MenhirState53
+                _menhir_run34 _menhir_env (Obj.magic _menhir_stack) MenhirState56
             | IMPD ->
-                _menhir_run29 _menhir_env (Obj.magic _menhir_stack) MenhirState53
+                _menhir_run32 _menhir_env (Obj.magic _menhir_stack) MenhirState56
             | IMPG ->
-                _menhir_run27 _menhir_env (Obj.magic _menhir_stack) MenhirState53
+                _menhir_run30 _menhir_env (Obj.magic _menhir_stack) MenhirState56
             | LPAREN ->
-                _menhir_run26 _menhir_env (Obj.magic _menhir_stack) MenhirState53
+                _menhir_run29 _menhir_env (Obj.magic _menhir_stack) MenhirState56
             | NOTD ->
-                _menhir_run24 _menhir_env (Obj.magic _menhir_stack) MenhirState53
+                _menhir_run27 _menhir_env (Obj.magic _menhir_stack) MenhirState56
             | NOTG ->
-                _menhir_run22 _menhir_env (Obj.magic _menhir_stack) MenhirState53
+                _menhir_run25 _menhir_env (Obj.magic _menhir_stack) MenhirState56
             | ORD ->
-                _menhir_run20 _menhir_env (Obj.magic _menhir_stack) MenhirState53
+                _menhir_run23 _menhir_env (Obj.magic _menhir_stack) MenhirState56
             | ORG ->
-                _menhir_run18 _menhir_env (Obj.magic _menhir_stack) MenhirState53
+                _menhir_run21 _menhir_env (Obj.magic _menhir_stack) MenhirState56
+            | REDUC ->
+                _menhir_run18 _menhir_env (Obj.magic _menhir_stack) MenhirState56
             | _ ->
                 assert (not _menhir_env._menhir_error);
                 _menhir_env._menhir_error <- true;
-                _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) MenhirState53) : 'freshtv172)
+                _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) MenhirState56) : 'freshtv182)
         | _ ->
             assert (not _menhir_env._menhir_error);
             _menhir_env._menhir_error <- true;
             let (_menhir_env : _menhir_env) = _menhir_env in
-            let (_menhir_stack : 'freshtv173 * _menhir_state * (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+            let (_menhir_stack : 'freshtv183 * _menhir_state * (
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 350 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 353 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) = Obj.magic _menhir_stack in
             ((let (_menhir_stack, _menhir_s, _) = _menhir_stack in
-            _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv174)) : 'freshtv176)
+            _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv184)) : 'freshtv186)
     | _ ->
         _menhir_fail ()
-
-and _menhir_fail : unit -> 'a =
-  fun () ->
-    Printf.fprintf stderr "Internal failure -- please contact the parser generator's developers.\n%!";
-    assert false
 
 and _menhir_run18 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s ->
@@ -366,33 +364,113 @@ and _menhir_run18 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
     match _tok with
     | INT _v ->
         let (_menhir_env : _menhir_env) = _menhir_env in
+        let (_menhir_stack : 'freshtv165 * _menhir_state) = Obj.magic _menhir_stack in
+        let (_v : (
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+               (int)
+# 372 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+        )) = _v in
+        ((let _menhir_stack = (_menhir_stack, _v) in
+        let _menhir_env = _menhir_discard _menhir_env in
+        let _tok = _menhir_env._menhir_token in
+        match _tok with
+        | INT _v ->
+            let (_menhir_env : _menhir_env) = _menhir_env in
+            let (_menhir_stack : ('freshtv161 * _menhir_state) * (
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+               (int)
+# 383 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+            )) = Obj.magic _menhir_stack in
+            let (_v : (
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+               (int)
+# 388 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+            )) = _v in
+            ((let _menhir_env = _menhir_discard _menhir_env in
+            let (_menhir_env : _menhir_env) = _menhir_env in
+            let (_menhir_stack : ('freshtv159 * _menhir_state) * (
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+               (int)
+# 395 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+            )) = Obj.magic _menhir_stack in
+            let ((_3 : (
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+               (int)
+# 400 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+            )) : (
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+               (int)
+# 404 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+            )) = _v in
+            ((let ((_menhir_stack, _menhir_s), (_2 : (
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+               (int)
+# 409 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+            ))) = _menhir_stack in
+            let _v : (
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+              (Proof_build.Tactiques.tactique)
+# 414 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+            ) = 
+# 53 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+                                 (Proof_build.Tactiques.reduc _2 _3)
+# 418 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+             in
+            _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv160)) : 'freshtv162)
+        | _ ->
+            assert (not _menhir_env._menhir_error);
+            _menhir_env._menhir_error <- true;
+            let (_menhir_env : _menhir_env) = _menhir_env in
+            let (_menhir_stack : ('freshtv163 * _menhir_state) * (
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+               (int)
+# 428 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+            )) = Obj.magic _menhir_stack in
+            ((let ((_menhir_stack, _menhir_s), _) = _menhir_stack in
+            _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv164)) : 'freshtv166)
+    | _ ->
+        assert (not _menhir_env._menhir_error);
+        _menhir_env._menhir_error <- true;
+        let (_menhir_env : _menhir_env) = _menhir_env in
+        let (_menhir_stack : 'freshtv167 * _menhir_state) = Obj.magic _menhir_stack in
+        ((let (_menhir_stack, _menhir_s) = _menhir_stack in
+        _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv168)
+
+and _menhir_run21 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
+  fun _menhir_env _menhir_stack _menhir_s ->
+    let _menhir_stack = (_menhir_stack, _menhir_s) in
+    let _menhir_env = _menhir_discard _menhir_env in
+    let _tok = _menhir_env._menhir_token in
+    match _tok with
+    | INT _v ->
+        let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv155 * _menhir_state) = Obj.magic _menhir_stack in
         let (_v : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 374 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 452 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let _menhir_env = _menhir_discard _menhir_env in
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv153 * _menhir_state) = Obj.magic _menhir_stack in
         let ((_2 : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 382 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 460 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 386 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 464 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         let _v : (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 392 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 470 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
-# 59 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 63 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                 (Proof_build.Tactiques.or_gauche _2)
-# 396 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 474 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv154)) : 'freshtv156)
     | _ ->
@@ -403,7 +481,7 @@ and _menhir_run18 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv158)
 
-and _menhir_run20 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
+and _menhir_run23 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s ->
     let _menhir_stack = (_menhir_stack, _menhir_s) in
     let _menhir_env = _menhir_discard _menhir_env in
@@ -413,31 +491,31 @@ and _menhir_run20 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv149 * _menhir_state) = Obj.magic _menhir_stack in
         let (_v : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 419 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 497 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let _menhir_env = _menhir_discard _menhir_env in
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv147 * _menhir_state) = Obj.magic _menhir_stack in
         let ((_2 : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 427 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 505 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 431 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 509 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         let _v : (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 437 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 515 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
-# 60 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 64 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                 (Proof_build.Tactiques.or_droite _2)
-# 441 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 519 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv148)) : 'freshtv150)
     | _ ->
@@ -448,7 +526,7 @@ and _menhir_run20 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv152)
 
-and _menhir_run22 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
+and _menhir_run25 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s ->
     let _menhir_stack = (_menhir_stack, _menhir_s) in
     let _menhir_env = _menhir_discard _menhir_env in
@@ -458,31 +536,31 @@ and _menhir_run22 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv143 * _menhir_state) = Obj.magic _menhir_stack in
         let (_v : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 464 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 542 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let _menhir_env = _menhir_discard _menhir_env in
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv141 * _menhir_state) = Obj.magic _menhir_stack in
         let ((_2 : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 472 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 550 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 476 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 554 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         let _v : (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 482 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 560 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
-# 55 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 59 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                  (Proof_build.Tactiques.not_gauche _2)
-# 486 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 564 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv142)) : 'freshtv144)
     | _ ->
@@ -493,7 +571,7 @@ and _menhir_run22 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv146)
 
-and _menhir_run24 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
+and _menhir_run27 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s ->
     let _menhir_stack = (_menhir_stack, _menhir_s) in
     let _menhir_env = _menhir_discard _menhir_env in
@@ -503,31 +581,31 @@ and _menhir_run24 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv137 * _menhir_state) = Obj.magic _menhir_stack in
         let (_v : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 509 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 587 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let _menhir_env = _menhir_discard _menhir_env in
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv135 * _menhir_state) = Obj.magic _menhir_stack in
         let ((_2 : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 517 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 595 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 521 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 599 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         let _v : (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 527 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 605 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
-# 56 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 60 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                 (Proof_build.Tactiques.not_droite _2)
-# 531 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 609 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv136)) : 'freshtv138)
     | _ ->
@@ -538,48 +616,50 @@ and _menhir_run24 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv140)
 
-and _menhir_run26 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
+and _menhir_run29 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s ->
     let _menhir_stack = (_menhir_stack, _menhir_s) in
     let _menhir_env = _menhir_discard _menhir_env in
     let _tok = _menhir_env._menhir_token in
     match _tok with
     | AFFD ->
-        _menhir_run46 _menhir_env (Obj.magic _menhir_stack) MenhirState26
+        _menhir_run49 _menhir_env (Obj.magic _menhir_stack) MenhirState29
     | AFFG ->
-        _menhir_run44 _menhir_env (Obj.magic _menhir_stack) MenhirState26
+        _menhir_run47 _menhir_env (Obj.magic _menhir_stack) MenhirState29
     | ANDD ->
-        _menhir_run42 _menhir_env (Obj.magic _menhir_stack) MenhirState26
+        _menhir_run45 _menhir_env (Obj.magic _menhir_stack) MenhirState29
     | ANDG ->
-        _menhir_run40 _menhir_env (Obj.magic _menhir_stack) MenhirState26
+        _menhir_run43 _menhir_env (Obj.magic _menhir_stack) MenhirState29
     | AXIOM ->
-        _menhir_run39 _menhir_env (Obj.magic _menhir_stack) MenhirState26
+        _menhir_run42 _menhir_env (Obj.magic _menhir_stack) MenhirState29
     | CONTRD ->
-        _menhir_run36 _menhir_env (Obj.magic _menhir_stack) MenhirState26
+        _menhir_run39 _menhir_env (Obj.magic _menhir_stack) MenhirState29
     | CONTRG ->
-        _menhir_run33 _menhir_env (Obj.magic _menhir_stack) MenhirState26
+        _menhir_run36 _menhir_env (Obj.magic _menhir_stack) MenhirState29
     | EXT ->
-        _menhir_run31 _menhir_env (Obj.magic _menhir_stack) MenhirState26
+        _menhir_run34 _menhir_env (Obj.magic _menhir_stack) MenhirState29
     | IMPD ->
-        _menhir_run29 _menhir_env (Obj.magic _menhir_stack) MenhirState26
+        _menhir_run32 _menhir_env (Obj.magic _menhir_stack) MenhirState29
     | IMPG ->
-        _menhir_run27 _menhir_env (Obj.magic _menhir_stack) MenhirState26
+        _menhir_run30 _menhir_env (Obj.magic _menhir_stack) MenhirState29
     | LPAREN ->
-        _menhir_run26 _menhir_env (Obj.magic _menhir_stack) MenhirState26
+        _menhir_run29 _menhir_env (Obj.magic _menhir_stack) MenhirState29
     | NOTD ->
-        _menhir_run24 _menhir_env (Obj.magic _menhir_stack) MenhirState26
+        _menhir_run27 _menhir_env (Obj.magic _menhir_stack) MenhirState29
     | NOTG ->
-        _menhir_run22 _menhir_env (Obj.magic _menhir_stack) MenhirState26
+        _menhir_run25 _menhir_env (Obj.magic _menhir_stack) MenhirState29
     | ORD ->
-        _menhir_run20 _menhir_env (Obj.magic _menhir_stack) MenhirState26
+        _menhir_run23 _menhir_env (Obj.magic _menhir_stack) MenhirState29
     | ORG ->
-        _menhir_run18 _menhir_env (Obj.magic _menhir_stack) MenhirState26
+        _menhir_run21 _menhir_env (Obj.magic _menhir_stack) MenhirState29
+    | REDUC ->
+        _menhir_run18 _menhir_env (Obj.magic _menhir_stack) MenhirState29
     | _ ->
         assert (not _menhir_env._menhir_error);
         _menhir_env._menhir_error <- true;
-        _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) MenhirState26
+        _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) MenhirState29
 
-and _menhir_run27 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
+and _menhir_run30 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s ->
     let _menhir_stack = (_menhir_stack, _menhir_s) in
     let _menhir_env = _menhir_discard _menhir_env in
@@ -589,31 +669,31 @@ and _menhir_run27 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv131 * _menhir_state) = Obj.magic _menhir_stack in
         let (_v : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 595 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 675 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let _menhir_env = _menhir_discard _menhir_env in
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv129 * _menhir_state) = Obj.magic _menhir_stack in
         let ((_2 : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 603 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 683 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 607 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 687 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         let _v : (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 613 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 693 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
-# 61 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 65 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                  (Proof_build.Tactiques.imp_gauche _2)
-# 617 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 697 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv130)) : 'freshtv132)
     | _ ->
@@ -624,7 +704,7 @@ and _menhir_run27 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv134)
 
-and _menhir_run29 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
+and _menhir_run32 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s ->
     let _menhir_stack = (_menhir_stack, _menhir_s) in
     let _menhir_env = _menhir_discard _menhir_env in
@@ -634,31 +714,31 @@ and _menhir_run29 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv125 * _menhir_state) = Obj.magic _menhir_stack in
         let (_v : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 640 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 720 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let _menhir_env = _menhir_discard _menhir_env in
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv123 * _menhir_state) = Obj.magic _menhir_stack in
         let ((_2 : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 648 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 728 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 652 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 732 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         let _v : (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 658 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 738 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
-# 62 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 66 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                 (Proof_build.Tactiques.imp_droite _2)
-# 662 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 742 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv124)) : 'freshtv126)
     | _ ->
@@ -669,7 +749,7 @@ and _menhir_run29 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv128)
 
-and _menhir_run31 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
+and _menhir_run34 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s ->
     let _menhir_stack = (_menhir_stack, _menhir_s) in
     let _menhir_env = _menhir_discard _menhir_env in
@@ -681,7 +761,7 @@ and _menhir_run31 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         let (_v : (
 # 6 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (string)
-# 685 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 765 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let _menhir_env = _menhir_discard _menhir_env in
         let (_menhir_env : _menhir_env) = _menhir_env in
@@ -689,21 +769,21 @@ and _menhir_run31 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         let ((_2 : (
 # 6 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (string)
-# 693 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 773 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) : (
 # 6 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (string)
-# 697 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 777 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         let _v : (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 703 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 783 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
-# 50 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 54 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                  (Proof_store.Ext_props.ext _2)
-# 707 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 787 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv118)) : 'freshtv120)
     | _ ->
@@ -714,23 +794,23 @@ and _menhir_run31 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv122)
 
-and _menhir_run50 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
+and _menhir_run53 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s ->
     let (_menhir_env : _menhir_env) = _menhir_env in
     let (_menhir_stack : 'freshtv115) = Obj.magic _menhir_stack in
     let (_menhir_s : _menhir_state) = _menhir_s in
     ((let _v : (
-# 38 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 40 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique list)
-# 726 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 806 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
     ) = 
-# 66 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 70 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                     ([])
-# 730 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 810 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
      in
     _menhir_goto_tacts _menhir_env _menhir_stack _menhir_s _v) : 'freshtv116)
 
-and _menhir_run33 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
+and _menhir_run36 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s ->
     let _menhir_stack = (_menhir_stack, _menhir_s) in
     let _menhir_env = _menhir_discard _menhir_env in
@@ -740,9 +820,9 @@ and _menhir_run33 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv111 * _menhir_state) = Obj.magic _menhir_stack in
         let (_v : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 746 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 826 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let _menhir_stack = (_menhir_stack, _v) in
         let _menhir_env = _menhir_discard _menhir_env in
@@ -751,44 +831,44 @@ and _menhir_run33 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         | INT _v ->
             let (_menhir_env : _menhir_env) = _menhir_env in
             let (_menhir_stack : ('freshtv107 * _menhir_state) * (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 757 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 837 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) = Obj.magic _menhir_stack in
             let (_v : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 762 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 842 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) = _v in
             ((let _menhir_env = _menhir_discard _menhir_env in
             let (_menhir_env : _menhir_env) = _menhir_env in
             let (_menhir_stack : ('freshtv105 * _menhir_state) * (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 769 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 849 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) = Obj.magic _menhir_stack in
             let ((_3 : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 774 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 854 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 778 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 858 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) = _v in
             ((let ((_menhir_stack, _menhir_s), (_2 : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 783 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 863 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             ))) = _menhir_stack in
             let _v : (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 788 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 868 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             ) = 
-# 53 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 57 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                  (Proof_build.Tactiques.contr_gauche _2 _3)
-# 792 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 872 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
              in
             _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv106)) : 'freshtv108)
         | _ ->
@@ -796,9 +876,9 @@ and _menhir_run33 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
             _menhir_env._menhir_error <- true;
             let (_menhir_env : _menhir_env) = _menhir_env in
             let (_menhir_stack : ('freshtv109 * _menhir_state) * (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 802 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 882 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) = Obj.magic _menhir_stack in
             ((let ((_menhir_stack, _menhir_s), _) = _menhir_stack in
             _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv110)) : 'freshtv112)
@@ -810,7 +890,7 @@ and _menhir_run33 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv114)
 
-and _menhir_run36 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
+and _menhir_run39 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s ->
     let _menhir_stack = (_menhir_stack, _menhir_s) in
     let _menhir_env = _menhir_discard _menhir_env in
@@ -820,9 +900,9 @@ and _menhir_run36 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv101 * _menhir_state) = Obj.magic _menhir_stack in
         let (_v : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 826 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 906 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let _menhir_stack = (_menhir_stack, _v) in
         let _menhir_env = _menhir_discard _menhir_env in
@@ -831,44 +911,44 @@ and _menhir_run36 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         | INT _v ->
             let (_menhir_env : _menhir_env) = _menhir_env in
             let (_menhir_stack : ('freshtv97 * _menhir_state) * (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 837 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 917 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) = Obj.magic _menhir_stack in
             let (_v : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 842 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 922 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) = _v in
             ((let _menhir_env = _menhir_discard _menhir_env in
             let (_menhir_env : _menhir_env) = _menhir_env in
             let (_menhir_stack : ('freshtv95 * _menhir_state) * (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 849 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 929 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) = Obj.magic _menhir_stack in
             let ((_3 : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 854 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 934 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 858 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 938 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) = _v in
             ((let ((_menhir_stack, _menhir_s), (_2 : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 863 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 943 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             ))) = _menhir_stack in
             let _v : (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 868 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 948 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             ) = 
-# 54 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 58 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                  (Proof_build.Tactiques.contr_droite _2 _3)
-# 872 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 952 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
              in
             _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv96)) : 'freshtv98)
         | _ ->
@@ -876,9 +956,9 @@ and _menhir_run36 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
             _menhir_env._menhir_error <- true;
             let (_menhir_env : _menhir_env) = _menhir_env in
             let (_menhir_stack : ('freshtv99 * _menhir_state) * (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 882 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 962 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) = Obj.magic _menhir_stack in
             ((let ((_menhir_stack, _menhir_s), _) = _menhir_stack in
             _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv100)) : 'freshtv102)
@@ -890,24 +970,24 @@ and _menhir_run36 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv104)
 
-and _menhir_run39 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
+and _menhir_run42 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s ->
     let _menhir_env = _menhir_discard _menhir_env in
     let (_menhir_env : _menhir_env) = _menhir_env in
     let (_menhir_stack : 'freshtv93) = Obj.magic _menhir_stack in
     let (_menhir_s : _menhir_state) = _menhir_s in
     ((let _v : (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 903 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 983 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
     ) = 
-# 49 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 52 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                  (Proof_build.Tactiques.axiom)
-# 907 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 987 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
      in
     _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv94)
 
-and _menhir_run40 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
+and _menhir_run43 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s ->
     let _menhir_stack = (_menhir_stack, _menhir_s) in
     let _menhir_env = _menhir_discard _menhir_env in
@@ -917,31 +997,31 @@ and _menhir_run40 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv89 * _menhir_state) = Obj.magic _menhir_stack in
         let (_v : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 923 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1003 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let _menhir_env = _menhir_discard _menhir_env in
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv87 * _menhir_state) = Obj.magic _menhir_stack in
         let ((_2 : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 931 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1011 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 935 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1015 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         let _v : (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 941 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1021 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
-# 57 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 61 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                 (Proof_build.Tactiques.and_gauche _2)
-# 945 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1025 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv88)) : 'freshtv90)
     | _ ->
@@ -952,7 +1032,7 @@ and _menhir_run40 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv92)
 
-and _menhir_run42 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
+and _menhir_run45 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s ->
     let _menhir_stack = (_menhir_stack, _menhir_s) in
     let _menhir_env = _menhir_discard _menhir_env in
@@ -962,31 +1042,31 @@ and _menhir_run42 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv83 * _menhir_state) = Obj.magic _menhir_stack in
         let (_v : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 968 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1048 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let _menhir_env = _menhir_discard _menhir_env in
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv81 * _menhir_state) = Obj.magic _menhir_stack in
         let ((_2 : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 976 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1056 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 980 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1060 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         let _v : (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 986 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1066 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
-# 58 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 62 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                  (Proof_build.Tactiques.and_droite _2)
-# 990 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1070 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv82)) : 'freshtv84)
     | _ ->
@@ -997,7 +1077,7 @@ and _menhir_run42 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv86)
 
-and _menhir_run44 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
+and _menhir_run47 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s ->
     let _menhir_stack = (_menhir_stack, _menhir_s) in
     let _menhir_env = _menhir_discard _menhir_env in
@@ -1007,31 +1087,31 @@ and _menhir_run44 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv77 * _menhir_state) = Obj.magic _menhir_stack in
         let (_v : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 1013 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1093 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let _menhir_env = _menhir_discard _menhir_env in
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv75 * _menhir_state) = Obj.magic _menhir_stack in
         let ((_2 : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 1021 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1101 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 1025 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1105 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         let _v : (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 1031 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1111 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
-# 51 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 55 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                  (Proof_build.Tactiques.aff_gauche _2)
-# 1035 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1115 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv76)) : 'freshtv78)
     | _ ->
@@ -1042,7 +1122,7 @@ and _menhir_run44 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv80)
 
-and _menhir_run46 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
+and _menhir_run49 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s ->
     let _menhir_stack = (_menhir_stack, _menhir_s) in
     let _menhir_env = _menhir_discard _menhir_env in
@@ -1052,31 +1132,31 @@ and _menhir_run46 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv71 * _menhir_state) = Obj.magic _menhir_stack in
         let (_v : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 1058 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1138 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let _menhir_env = _menhir_discard _menhir_env in
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv69 * _menhir_state) = Obj.magic _menhir_stack in
         let ((_2 : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 1066 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1146 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) : (
-# 18 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 19 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (int)
-# 1070 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1150 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = _v in
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         let _v : (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 1076 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1156 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
-# 52 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 56 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                  (Proof_build.Tactiques.aff_droite _2)
-# 1080 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1160 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv70)) : 'freshtv72)
     | _ ->
@@ -1086,6 +1166,66 @@ and _menhir_run46 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
         let (_menhir_stack : 'freshtv73 * _menhir_state) = Obj.magic _menhir_stack in
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
         _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv74)
+
+and _menhir_fail : unit -> 'a =
+  fun () ->
+    Printf.fprintf stderr "Internal failure -- please contact the parser generator's developers.\n%!";
+    assert false
+
+and _menhir_goto_start : _menhir_env -> 'ttv_tail -> (
+# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+              (string * Proof_build.Formule.formule)
+# 1179 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+) -> 'ttv_return =
+  fun _menhir_env _menhir_stack _v ->
+    let _menhir_stack = (_menhir_stack, _v) in
+    let (_menhir_env : _menhir_env) = _menhir_env in
+    let (_menhir_stack : ('freshtv67) * (
+# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+              (string * Proof_build.Formule.formule)
+# 1187 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+    )) = Obj.magic _menhir_stack in
+    ((assert (not _menhir_env._menhir_error);
+    let _tok = _menhir_env._menhir_token in
+    match _tok with
+    | AFFD ->
+        _menhir_run49 _menhir_env (Obj.magic _menhir_stack) MenhirState17
+    | AFFG ->
+        _menhir_run47 _menhir_env (Obj.magic _menhir_stack) MenhirState17
+    | ANDD ->
+        _menhir_run45 _menhir_env (Obj.magic _menhir_stack) MenhirState17
+    | ANDG ->
+        _menhir_run43 _menhir_env (Obj.magic _menhir_stack) MenhirState17
+    | AXIOM ->
+        _menhir_run42 _menhir_env (Obj.magic _menhir_stack) MenhirState17
+    | CONTRD ->
+        _menhir_run39 _menhir_env (Obj.magic _menhir_stack) MenhirState17
+    | CONTRG ->
+        _menhir_run36 _menhir_env (Obj.magic _menhir_stack) MenhirState17
+    | EOF ->
+        _menhir_run53 _menhir_env (Obj.magic _menhir_stack) MenhirState17
+    | EXT ->
+        _menhir_run34 _menhir_env (Obj.magic _menhir_stack) MenhirState17
+    | IMPD ->
+        _menhir_run32 _menhir_env (Obj.magic _menhir_stack) MenhirState17
+    | IMPG ->
+        _menhir_run30 _menhir_env (Obj.magic _menhir_stack) MenhirState17
+    | LPAREN ->
+        _menhir_run29 _menhir_env (Obj.magic _menhir_stack) MenhirState17
+    | NOTD ->
+        _menhir_run27 _menhir_env (Obj.magic _menhir_stack) MenhirState17
+    | NOTG ->
+        _menhir_run25 _menhir_env (Obj.magic _menhir_stack) MenhirState17
+    | ORD ->
+        _menhir_run23 _menhir_env (Obj.magic _menhir_stack) MenhirState17
+    | ORG ->
+        _menhir_run21 _menhir_env (Obj.magic _menhir_stack) MenhirState17
+    | REDUC ->
+        _menhir_run18 _menhir_env (Obj.magic _menhir_stack) MenhirState17
+    | _ ->
+        assert (not _menhir_env._menhir_error);
+        _menhir_env._menhir_error <- true;
+        _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) MenhirState17) : 'freshtv68)
 
 and _menhir_run8 : _menhir_env -> 'ttv_tail * _menhir_state * 'tv_prop -> 'ttv_return =
   fun _menhir_env _menhir_stack ->
@@ -1159,9 +1299,9 @@ and _menhir_goto_prop : _menhir_env -> 'ttv_tail -> _menhir_state -> 'tv_prop ->
             let (_menhir_stack : ('freshtv31 * _menhir_state) * _menhir_state * 'tv_prop) = Obj.magic _menhir_stack in
             ((let ((_menhir_stack, _menhir_s), _, (_2 : 'tv_prop)) = _menhir_stack in
             let _v : 'tv_prop = 
-# 72 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 76 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                      ( _2 )
-# 1165 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1305 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
              in
             _menhir_goto_prop _menhir_env _menhir_stack _menhir_s _v) : 'freshtv32)) : 'freshtv34)
         | _ ->
@@ -1178,9 +1318,9 @@ and _menhir_goto_prop : _menhir_env -> 'ttv_tail -> _menhir_state -> 'tv_prop ->
         let (_menhir_stack : (('freshtv39 * _menhir_state * 'tv_prop)) * _menhir_state * 'tv_prop) = Obj.magic _menhir_stack in
         ((let ((_menhir_stack, _menhir_s, (_1 : 'tv_prop)), _, (_3 : 'tv_prop)) = _menhir_stack in
         let _v : 'tv_prop = 
-# 75 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 79 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                     ( Or(_1,_3) )
-# 1184 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1324 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_prop _menhir_env _menhir_stack _menhir_s _v) : 'freshtv40)) : 'freshtv42)
     | MenhirState10 ->
@@ -1193,14 +1333,14 @@ and _menhir_goto_prop : _menhir_env -> 'ttv_tail -> _menhir_state -> 'tv_prop ->
             _menhir_run12 _menhir_env (Obj.magic _menhir_stack)
         | OR ->
             _menhir_run8 _menhir_env (Obj.magic _menhir_stack)
-        | EOL | IMP | RPAREN ->
+        | AFFD | AFFG | ANDD | ANDG | AXIOM | CONTRD | CONTRG | EOF | EOL | EXT | IMP | IMPD | IMPG | LPAREN | NOTD | NOTG | ORD | ORG | REDUC | RPAREN ->
             let (_menhir_env : _menhir_env) = _menhir_env in
             let (_menhir_stack : (('freshtv43 * _menhir_state * 'tv_prop)) * _menhir_state * 'tv_prop) = Obj.magic _menhir_stack in
             ((let ((_menhir_stack, _menhir_s, (_1 : 'tv_prop)), _, (_3 : 'tv_prop)) = _menhir_stack in
             let _v : 'tv_prop = 
-# 73 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 77 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                     ( Imp(_1,_3) )
-# 1204 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1344 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
              in
             _menhir_goto_prop _menhir_env _menhir_stack _menhir_s _v) : 'freshtv44)
         | _ ->
@@ -1217,9 +1357,9 @@ and _menhir_goto_prop : _menhir_env -> 'ttv_tail -> _menhir_state -> 'tv_prop ->
         let (_menhir_stack : (('freshtv49 * _menhir_state * 'tv_prop)) * _menhir_state * 'tv_prop) = Obj.magic _menhir_stack in
         ((let ((_menhir_stack, _menhir_s, (_1 : 'tv_prop)), _, (_3 : 'tv_prop)) = _menhir_stack in
         let _v : 'tv_prop = 
-# 74 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 78 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                     ( And(_1,_3) )
-# 1223 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1363 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_prop _menhir_env _menhir_stack _menhir_s _v) : 'freshtv50)) : 'freshtv52)
     | MenhirState3 ->
@@ -1229,17 +1369,17 @@ and _menhir_goto_prop : _menhir_env -> 'ttv_tail -> _menhir_state -> 'tv_prop ->
         let (_menhir_stack : ('freshtv53 * _menhir_state) * _menhir_state * 'tv_prop) = Obj.magic _menhir_stack in
         ((let ((_menhir_stack, _menhir_s), _, (_2 : 'tv_prop)) = _menhir_stack in
         let _v : 'tv_prop = 
-# 76 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 80 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                      ( Not _2)
-# 1235 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1375 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_prop _menhir_env _menhir_stack _menhir_s _v) : 'freshtv54)) : 'freshtv56)
     | MenhirState2 ->
         let (_menhir_env : _menhir_env) = _menhir_env in
-        let (_menhir_stack : ('freshtv67 * (
+        let (_menhir_stack : ('freshtv65 * (
 # 6 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (string)
-# 1243 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1383 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) * _menhir_state * 'tv_prop) = Obj.magic _menhir_stack in
         ((assert (not _menhir_env._menhir_error);
         let _tok = _menhir_env._menhir_token in
@@ -1248,116 +1388,86 @@ and _menhir_goto_prop : _menhir_env -> 'ttv_tail -> _menhir_state -> 'tv_prop ->
             _menhir_run12 _menhir_env (Obj.magic _menhir_stack)
         | EOL ->
             let (_menhir_env : _menhir_env) = _menhir_env in
-            let (_menhir_stack : ('freshtv63 * (
+            let (_menhir_stack : ('freshtv59 * (
 # 6 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (string)
-# 1255 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1395 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) * _menhir_state * 'tv_prop) = Obj.magic _menhir_stack in
             ((let _menhir_env = _menhir_discard _menhir_env in
             let (_menhir_env : _menhir_env) = _menhir_env in
-            let (_menhir_stack : ('freshtv61 * (
+            let (_menhir_stack : ('freshtv57 * (
 # 6 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (string)
-# 1262 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1402 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) * _menhir_state * 'tv_prop) = Obj.magic _menhir_stack in
             ((let ((_menhir_stack, (_1 : (
 # 6 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (string)
-# 1267 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1407 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             ))), _, (_2 : 'tv_prop)) = _menhir_stack in
             let _v : (
-# 37 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (string * Proof_build.Formule.formule)
-# 1272 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1412 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             ) = 
-# 46 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
-                                    ( ( _1 , _2 ) )
-# 1276 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 48 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+                                     ( ( _1 , _2 ) )
+# 1416 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
              in
-            let (_menhir_env : _menhir_env) = _menhir_env in
-            let (_menhir_stack : 'freshtv59) = _menhir_stack in
-            let (_v : (
-# 37 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
-              (string * Proof_build.Formule.formule)
-# 1283 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
-            )) = _v in
-            ((let _menhir_stack = (_menhir_stack, _v) in
-            let (_menhir_env : _menhir_env) = _menhir_env in
-            let (_menhir_stack : ('freshtv57) * (
-# 37 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
-              (string * Proof_build.Formule.formule)
-# 1290 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
-            )) = Obj.magic _menhir_stack in
-            ((assert (not _menhir_env._menhir_error);
-            let _tok = _menhir_env._menhir_token in
-            match _tok with
-            | AFFD ->
-                _menhir_run46 _menhir_env (Obj.magic _menhir_stack) MenhirState17
-            | AFFG ->
-                _menhir_run44 _menhir_env (Obj.magic _menhir_stack) MenhirState17
-            | ANDD ->
-                _menhir_run42 _menhir_env (Obj.magic _menhir_stack) MenhirState17
-            | ANDG ->
-                _menhir_run40 _menhir_env (Obj.magic _menhir_stack) MenhirState17
-            | AXIOM ->
-                _menhir_run39 _menhir_env (Obj.magic _menhir_stack) MenhirState17
-            | CONTRD ->
-                _menhir_run36 _menhir_env (Obj.magic _menhir_stack) MenhirState17
-            | CONTRG ->
-                _menhir_run33 _menhir_env (Obj.magic _menhir_stack) MenhirState17
-            | EOF ->
-                _menhir_run50 _menhir_env (Obj.magic _menhir_stack) MenhirState17
-            | EXT ->
-                _menhir_run31 _menhir_env (Obj.magic _menhir_stack) MenhirState17
-            | IMPD ->
-                _menhir_run29 _menhir_env (Obj.magic _menhir_stack) MenhirState17
-            | IMPG ->
-                _menhir_run27 _menhir_env (Obj.magic _menhir_stack) MenhirState17
-            | LPAREN ->
-                _menhir_run26 _menhir_env (Obj.magic _menhir_stack) MenhirState17
-            | NOTD ->
-                _menhir_run24 _menhir_env (Obj.magic _menhir_stack) MenhirState17
-            | NOTG ->
-                _menhir_run22 _menhir_env (Obj.magic _menhir_stack) MenhirState17
-            | ORD ->
-                _menhir_run20 _menhir_env (Obj.magic _menhir_stack) MenhirState17
-            | ORG ->
-                _menhir_run18 _menhir_env (Obj.magic _menhir_stack) MenhirState17
-            | _ ->
-                assert (not _menhir_env._menhir_error);
-                _menhir_env._menhir_error <- true;
-                _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) MenhirState17) : 'freshtv58)) : 'freshtv60)) : 'freshtv62)) : 'freshtv64)
+            _menhir_goto_start _menhir_env _menhir_stack _v) : 'freshtv58)) : 'freshtv60)
         | IMP ->
             _menhir_run10 _menhir_env (Obj.magic _menhir_stack)
         | OR ->
             _menhir_run8 _menhir_env (Obj.magic _menhir_stack)
+        | AFFD | AFFG | ANDD | ANDG | AXIOM | CONTRD | CONTRG | EOF | EXT | IMPD | IMPG | LPAREN | NOTD | NOTG | ORD | ORG | REDUC ->
+            let (_menhir_env : _menhir_env) = _menhir_env in
+            let (_menhir_stack : ('freshtv61 * (
+# 6 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+               (string)
+# 1428 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+            )) * _menhir_state * 'tv_prop) = Obj.magic _menhir_stack in
+            ((let ((_menhir_stack, (_1 : (
+# 6 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+               (string)
+# 1433 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+            ))), _, (_2 : 'tv_prop)) = _menhir_stack in
+            let _v : (
+# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+              (string * Proof_build.Formule.formule)
+# 1438 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+            ) = 
+# 49 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+                                     ( ( _1 , _2 ) )
+# 1442 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+             in
+            _menhir_goto_start _menhir_env _menhir_stack _v) : 'freshtv62)
         | _ ->
             assert (not _menhir_env._menhir_error);
             _menhir_env._menhir_error <- true;
             let (_menhir_env : _menhir_env) = _menhir_env in
-            let (_menhir_stack : ('freshtv65 * (
+            let (_menhir_stack : ('freshtv63 * (
 # 6 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (string)
-# 1342 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1452 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) * _menhir_state * 'tv_prop) = Obj.magic _menhir_stack in
             ((let (_menhir_stack, _menhir_s, _) = _menhir_stack in
-            _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv66)) : 'freshtv68)
+            _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv64)) : 'freshtv66)
     | _ ->
         _menhir_fail ()
 
 and _menhir_errorcase : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s ->
     match _menhir_s with
-    | MenhirState53 ->
+    | MenhirState56 ->
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : ('freshtv13 * _menhir_state * (
-# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 41 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (Proof_build.Tactiques.tactique)
-# 1357 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1467 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ))) = Obj.magic _menhir_stack in
         ((let (_menhir_stack, _menhir_s, _) = _menhir_stack in
         _menhir_errorcase _menhir_env (Obj.magic _menhir_stack) _menhir_s) : 'freshtv14)
-    | MenhirState26 ->
+    | MenhirState29 ->
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : 'freshtv15 * _menhir_state) = Obj.magic _menhir_stack in
         ((let (_menhir_stack, _menhir_s) = _menhir_stack in
@@ -1365,9 +1475,9 @@ and _menhir_errorcase : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return
     | MenhirState17 ->
         let (_menhir_env : _menhir_env) = _menhir_env in
         let (_menhir_stack : ('freshtv17) * (
-# 37 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 39 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               (string * Proof_build.Formule.formule)
-# 1371 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1481 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = Obj.magic _menhir_stack in
         (raise _eRR : 'freshtv18)
     | MenhirState12 ->
@@ -1400,7 +1510,7 @@ and _menhir_errorcase : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return
         let (_menhir_stack : 'freshtv29 * (
 # 6 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (string)
-# 1404 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1514 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         )) = Obj.magic _menhir_stack in
         (raise _eRR : 'freshtv30)
 
@@ -1441,7 +1551,7 @@ and _menhir_run4 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
 and _menhir_run5 : _menhir_env -> 'ttv_tail -> _menhir_state -> (
 # 8 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (Proof_build.Formule.formule)
-# 1445 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1555 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
 ) -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s _v ->
     let _menhir_env = _menhir_discard _menhir_env in
@@ -1451,16 +1561,16 @@ and _menhir_run5 : _menhir_env -> 'ttv_tail -> _menhir_state -> (
     let ((_1 : (
 # 8 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (Proof_build.Formule.formule)
-# 1455 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1565 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
     )) : (
 # 8 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (Proof_build.Formule.formule)
-# 1459 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1569 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
     )) = _v in
     ((let _v : 'tv_prop = 
-# 71 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 75 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                                       ( _1 )
-# 1464 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1574 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
      in
     _menhir_goto_prop _menhir_env _menhir_stack _menhir_s _v) : 'freshtv12)
 
@@ -1477,9 +1587,9 @@ and _menhir_discard : _menhir_env -> _menhir_env =
     }
 
 and main : (Lexing.lexbuf -> token) -> Lexing.lexbuf -> (
-# 36 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
+# 38 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
               ((string * Proof_build.Formule.formule) * (Proof_build.Tactiques.tactique list))
-# 1483 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1593 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
 ) =
   fun lexer lexbuf ->
     let _menhir_env = {
@@ -1505,7 +1615,7 @@ and main : (Lexing.lexbuf -> token) -> Lexing.lexbuf -> (
             let (_v : (
 # 6 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
                (string)
-# 1509 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1619 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             )) = _v in
             ((let _menhir_stack = (_menhir_stack, _v) in
             let _menhir_env = _menhir_discard _menhir_env in
@@ -1537,4 +1647,4 @@ and main : (Lexing.lexbuf -> token) -> Lexing.lexbuf -> (
 # 269 "<standard.mly>"
   
 
-# 1541 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
+# 1651 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"

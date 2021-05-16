@@ -3,6 +3,7 @@
 
 type token = 
   | RPAREN
+  | REDUC
   | ORG
   | ORD
   | OR

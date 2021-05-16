@@ -9,19 +9,20 @@
           | ("proof")                                           {BEGIN}
           
           | ("axiom")                                           {AXIOM}
+          | ("reduc")                                            {REDUC}
           | ("ext")                                             {EXT}
-          | ("affg")|("wl")                                            {AFFG}
-          | ("affd")|("wr")                                           {AFFD}
-          | ("><g")|("cl")                                             {CONTRG}
-          | ("><d")|("cr")                                               {CONTRD}
-          | ("notg")|("¬g")|("notl")|("¬l")                                     {NOTG}
-          | ("notd")|("¬d")|("notr")|("¬r")                                      {NOTD}
-          | ("^g")|("^l")                                              {ANDG}
-          | ("^d")|("^r")                                           {ANDD}
-          | ("vg")|("vl")                                              {ORG}
-          | ("vd")|("vr")                                              {ORD}
-          | ("->g")|("->l")                                             {IMPG}
-          | ("->d")|("->r")                                             {IMPD}
+          | ("affg")|("wl")                                     {AFFG}
+          | ("affd")|("wr")                                     {AFFD}
+          | ("><g")|("cl")                                      {CONTRG}
+          | ("><d")|("cr")                                      {CONTRD}
+          | ("notg")|("¬g")|("notl")|("¬l")                     {NOTG}
+          | ("notd")|("¬d")|("notr")|("¬r")                     {NOTD}
+          | ("^g")|("^l")                                       {ANDG}
+          | ("^d")|("^r")                                       {ANDD}
+          | ("vg")|("vl")                                       {ORG}
+          | ("vd")|("vr")                                       {ORD}
+          | ("->g")|("->l")                                     {IMPG}
+          | ("->d")|("->r")                                     {IMPD}
 
           | 'v'                                                 { OR }
           | (['a'-'z']|['0'-'9']|['_']|['-'])++ as s            { NAME(s) }

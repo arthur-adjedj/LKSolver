@@ -18,6 +18,7 @@
 
         %token <int> INT
         %token AXIOM
+        %token REDUC
         %token EXT
         %token AFFG
         %token AFFD
@@ -41,13 +42,15 @@
 
         %%
         main:
-            BEGIN start tacts       { ( $2 , $3 ) }
+            |BEGIN start tacts       { ( $2 , $3 ) }
         ;
         start:
-            NAME prop EOL           { ( $1 , $2 ) }
+            |NAME prop EOL           { ( $1 , $2 ) }
+            |NAME prop               { ( $1 , $2 ) }
         ;
         tact:
             | AXIOM              {Proof_build.Tactiques.axiom}
+            | REDUC INT INT      {Proof_build.Tactiques.reduc $2 $3}
             | EXT NAME           {Proof_store.Ext_props.ext $2}
             | AFFG INT           {Proof_build.Tactiques.aff_gauche $2}
             | AFFD INT           {Proof_build.Tactiques.aff_droite $2}
