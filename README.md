@@ -21,6 +21,7 @@ proof <name> <formula>
 `name` can contain a-z letters, numbers as well as `-` and `_`
 
 The syntax of formulas is as follow:
+
 -Variable names : `A-Z`
 
 -And : `^`
@@ -32,9 +33,10 @@ The syntax of formulas is as follow:
 -Not : `-|` or `¬`
 
 
-Parenthesis are allowed and usable in formula names
+Parenthesis are usable in formula names
 
 There are a few rules available. In order to make things more readable, the permutation is not implemented, you can instead act on the i-th element of the left or right side of a sequent as you wish:
+
 -Axiom : `axiom`
 
 -Left/Right Weakening i : `wl i` / `wr i` 
@@ -49,7 +51,7 @@ There are a few rules available. In order to make things more readable, the perm
 
 -Left/Right Imply i  : `->l i` / `->r i`
 
--Reduction i j : `reduc i j` (if A is present on both sides, it makes all the weakening/contractions in one go)
+-Reduction i j : `reduc i j` (if A is present on both sides, it makes all the weakenings/contractions in one go)
 
 -Extern : `ext <name>` with `<name>` being the name of a previously saved, already proved proposition
 
