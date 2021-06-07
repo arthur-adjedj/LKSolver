@@ -469,7 +469,7 @@ and _menhir_run21 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
 # 470 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
 # 63 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
-                                (Proof_build.Tactiques.or_gauche _2)
+                                (Proof_build.Tactiques.or_left _2)
 # 474 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv154)) : 'freshtv156)
@@ -514,7 +514,7 @@ and _menhir_run23 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
 # 515 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
 # 64 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
-                                (Proof_build.Tactiques.or_droite _2)
+                                (Proof_build.Tactiques.or_right _2)
 # 519 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv148)) : 'freshtv150)
@@ -559,7 +559,7 @@ and _menhir_run25 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
 # 560 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
 # 59 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
-                                 (Proof_build.Tactiques.not_gauche _2)
+                                 (Proof_build.Tactiques.not_left _2)
 # 564 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv142)) : 'freshtv144)
@@ -604,7 +604,7 @@ and _menhir_run27 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
 # 605 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
 # 60 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
-                                (Proof_build.Tactiques.not_droite _2)
+                                (Proof_build.Tactiques.not_right _2)
 # 609 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv136)) : 'freshtv138)
@@ -692,7 +692,7 @@ and _menhir_run30 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
 # 693 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
 # 65 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
-                                 (Proof_build.Tactiques.imp_gauche _2)
+                                 (Proof_build.Tactiques.imp_left _2)
 # 697 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv130)) : 'freshtv132)
@@ -737,7 +737,7 @@ and _menhir_run32 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
 # 738 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
 # 66 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
-                                (Proof_build.Tactiques.imp_droite _2)
+                                (Proof_build.Tactiques.imp_right _2)
 # 742 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv124)) : 'freshtv126)
@@ -867,7 +867,7 @@ and _menhir_run36 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
 # 868 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             ) = 
 # 57 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
-                                 (Proof_build.Tactiques.contr_gauche _2 _3)
+                                 (Proof_build.Tactiques.contr_left _2 _3)
 # 872 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
              in
             _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv106)) : 'freshtv108)
@@ -947,7 +947,7 @@ and _menhir_run39 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
 # 948 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
             ) = 
 # 58 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
-                                 (Proof_build.Tactiques.contr_droite _2 _3)
+                                 (Proof_build.Tactiques.contr_right _2 _3)
 # 952 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
              in
             _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv96)) : 'freshtv98)
@@ -1020,7 +1020,7 @@ and _menhir_run43 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
 # 1021 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
 # 61 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
-                                (Proof_build.Tactiques.and_gauche _2)
+                                (Proof_build.Tactiques.and_left _2)
 # 1025 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv88)) : 'freshtv90)
@@ -1065,7 +1065,7 @@ and _menhir_run45 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
 # 1066 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
 # 62 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
-                                 (Proof_build.Tactiques.and_droite _2)
+                                 (Proof_build.Tactiques.and_right _2)
 # 1070 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv82)) : 'freshtv84)
@@ -1110,7 +1110,7 @@ and _menhir_run47 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
 # 1111 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
 # 55 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
-                                 (Proof_build.Tactiques.aff_gauche _2)
+                                 (Proof_build.Tactiques.aff_left _2)
 # 1115 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv76)) : 'freshtv78)
@@ -1155,7 +1155,7 @@ and _menhir_run49 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
 # 1156 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
         ) = 
 # 56 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.mly"
-                                 (Proof_build.Tactiques.aff_droite _2)
+                                 (Proof_build.Tactiques.aff_right _2)
 # 1160 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\parser_read.ml"
          in
         _menhir_goto_tact _menhir_env _menhir_stack _menhir_s _v) : 'freshtv70)) : 'freshtv72)

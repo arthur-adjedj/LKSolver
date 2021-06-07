@@ -52,18 +52,18 @@
             | AXIOM              {Proof_build.Tactiques.axiom}
             | REDUC INT INT      {Proof_build.Tactiques.reduc $2 $3}
             | EXT NAME           {Proof_store.Ext_props.ext $2}
-            | AFFG INT           {Proof_build.Tactiques.aff_gauche $2}
-            | AFFD INT           {Proof_build.Tactiques.aff_droite $2}
-            | CONTRG INT INT     {Proof_build.Tactiques.contr_gauche $2 $3}
-            | CONTRD INT INT     {Proof_build.Tactiques.contr_droite $2 $3}
-            | NOTG INT           {Proof_build.Tactiques.not_gauche $2}
-            | NOTD INT          {Proof_build.Tactiques.not_droite $2}
-            | ANDG INT          {Proof_build.Tactiques.and_gauche $2}
-            | ANDD INT           {Proof_build.Tactiques.and_droite $2}
-            | ORG INT           {Proof_build.Tactiques.or_gauche $2}
-            | ORD INT           {Proof_build.Tactiques.or_droite $2}
-            | IMPG INT           {Proof_build.Tactiques.imp_gauche $2}
-            | IMPD INT          {Proof_build.Tactiques.imp_droite $2}
+            | AFFG INT           {Proof_build.Tactiques.aff_left $2}
+            | AFFD INT           {Proof_build.Tactiques.aff_right $2}
+            | CONTRG INT INT     {Proof_build.Tactiques.contr_left $2 $3}
+            | CONTRD INT INT     {Proof_build.Tactiques.contr_right $2 $3}
+            | NOTG INT           {Proof_build.Tactiques.not_left $2}
+            | NOTD INT          {Proof_build.Tactiques.not_right $2}
+            | ANDG INT          {Proof_build.Tactiques.and_left $2}
+            | ANDD INT           {Proof_build.Tactiques.and_right $2}
+            | ORG INT           {Proof_build.Tactiques.or_left $2}
+            | ORD INT           {Proof_build.Tactiques.or_right $2}
+            | IMPG INT           {Proof_build.Tactiques.imp_left $2}
+            | IMPD INT          {Proof_build.Tactiques.imp_right $2}
             | LPAREN tact RPAREN     {$2}
         ;
         tacts:

@@ -1,15 +1,23 @@
-type token =
+
+(* The type of tokens. *)
+
+type token = 
+  | STR of (string)
   | SEP
-  | EOF
-  | CHAR of (Proof_build.Formule.formule)
-  | IMP
-  | AND
+  | RPAREN
   | OR
   | NOT
   | LPAREN
-  | RPAREN
+  | IMP
   | EOL
-  | STR of (string)
+  | EOF
+  | CHAR of (Proof_build.Formule.formule)
+  | AND
 
-val main :
-  (Lexing.lexbuf  -> token) -> Lexing.lexbuf -> string * Proof_build.Formule.formule
+(* This exception is raised by the monolithic API functions. *)
+
+exception Error
+
+(* The monolithic API. *)
+
+val main: (Lexing.lexbuf -> token) -> Lexing.lexbuf -> (string * Proof_build.Formule.formule)

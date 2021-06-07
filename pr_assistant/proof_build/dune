@@ -1,4 +1,6 @@
 (library
  (name proof_build)
- (libraries base cmdliner stdlib)
+ (libraries base cmdliner stdlib nat)
+  (inline_tests)
+ (preprocess (pps ppx_inline_test))
 )

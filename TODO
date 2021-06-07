@@ -1,1 +1,6 @@
--intégrer les entiers naturels et les quantificateurs (?)
+-placer les quantificateurs dans les formules et non les comparaisons
+-trouver un moyen de différencier les var_nat et les var 
+-produire les règles LK quantificateurs
+-produire règles nat 
+-????
+-profit

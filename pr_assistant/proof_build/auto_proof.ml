@@ -28,12 +28,12 @@ let can_be_reduced s =
 
 
 let next_tact_f f is_d = match f with
-  |Bottom -> failwith "can't reduce the formula any more"
-  |Var _ -> failwith "can't reduce the formula any more"
-  |And _ -> if is_d then and_droite else and_gauche
-  |Or _ -> if is_d then or_droite else or_gauche
-  |Not _ -> if is_d then not_droite else not_gauche
-  |Imp _ -> if is_d then imp_droite else imp_gauche
+  |B false -> failwith "Can't reduce the formula any more"
+  |Var _ -> failwith "Can't reduce the formula any more"
+  |And _ -> if is_d then and_right else and_left
+  |Or _ -> if is_d then or_right else or_left
+  |Not _ -> if is_d then not_right else not_left
+  |Imp _ -> if is_d then imp_right else imp_left
 
 
 let next_tact_sq s = 

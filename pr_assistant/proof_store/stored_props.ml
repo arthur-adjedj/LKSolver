@@ -16,18 +16,18 @@ let load_stored_props print =
         line := input_line file;
         let result = Parser_stored.main Lexer_stored.token (Lexing.from_string !line) in
         Hashtbl.add props (fst result) (snd result);
-        if print then print_endline ((fst result)^" chargée")
+        if print then print_endline ((fst result)^" loaded")
       done;
     with 
       |Lexer_stored.Eof ->
         close_in file
      |End_of_file ->
        close_in file
-     |e -> print_endline "erreur inconnue";close_in file;raise e
+     |e -> if print then print_endline "Unknown error";close_in file;raise e
   )
     with
-     |Sys_error _-> print_endline "fichier de stockage non-existant, merci d'écrire une formule correcte afin d'initialiser le fichier";print_endline ""
-     |e -> print_endline "erreur inconnue";raise e
+     |Sys_error _-> if print then print_endline "fichier de stockage non-existant, merci d'écrire une formule correcte afin d'initialiser le fichier";print_endline ""
+     |e -> if print then print_endline "Unknown error";raise e
 
 
 

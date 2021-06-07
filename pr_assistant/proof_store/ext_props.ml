@@ -11,7 +11,7 @@ exception Wrong_sequent of ((sequent list) * string)
 let add str f =
   load_stored_props false;
   if Hashtbl.mem props str then (
-    print_endline "Propriété déjà enregistrée !";
+    print_endline "Formula is already saved !";
     raise Already_exists 
   )
   else
@@ -19,11 +19,12 @@ let add str f =
       let file = open_out_gen [Open_creat;Open_append] 0o640 "stored_props" in 
       Printf.fprintf file "%s\n" (str^" : "^(formule_to_string f));
       close_out file;
-      print_endline ("Propriété \""^str^"\" ajoutée au répertoire avec succès !")
+      print_endline ("Formula \""^str^"\" successfully saved")
     end
 
 
 (*tactique d'emploi d'une propriété déjà prouvée et stockée*)
+(*O(n(name))*)
 let ext name s =
   let pattern = Hashtbl.find props name in
   if not (is_s_equiv ([||],[|pattern|]) s) then

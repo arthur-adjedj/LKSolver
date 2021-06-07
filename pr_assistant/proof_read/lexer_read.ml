@@ -652,7 +652,7 @@ let
 
   | 5 ->
 # 12 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.mll"
-                                                                (REDUC)
+                                                                 (REDUC)
 # 657 "C:\Users\aarth\IdeaProjects\Theorem_prover\pr_assistant\proof_read\lexer_read.ml"
 
   | 6 ->
