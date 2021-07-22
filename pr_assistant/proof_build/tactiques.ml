@@ -303,7 +303,7 @@ let forall_d s i =
 	and dres = Array.copy (snd s) in 
 	match (snd s).(i) with
 		|Forall(_,_,c) -> dres.(i) <- c;
-													((gres,dres),"∀d")
+													([(gres,dres)],"∀d")
 		|_ -> raise (Wrong_sequent ([s],"wrong_sequent ∀d"))
 
 		
@@ -311,8 +311,8 @@ let exists_g s i =
 	let gres = Array.copy (fst s)
 	and dres = Array.copy (snd s) in 
 	match (fst s).(i) with
-		|Forall(_,_,c) -> gres.(i) <- c;
-													((gres,dres),"∃g")
+		|Exists(_,_,c) -> gres.(i) <- c;
+													([(gres,dres)],"∃g")
 		|_ -> raise (Wrong_sequent ([s],"wrong_sequent ∃g"))
 
 
@@ -323,7 +323,7 @@ let forall_g_b s i t =
 	and dres = Array.copy (snd s) in 
 	match (fst s).(i) with
   |Forall(x,B,c) -> gres.(i) <- change_var_b x t c;
-                    ((gres,dres),"∀.g")
+                    ([(gres,dres)],"∀.g")
 	|_ -> raise (Wrong_sequent ([s],"wrong_sequent ∀.g"))
 
 let forall_g_n s i t = 
@@ -333,7 +333,7 @@ let forall_g_n s i t =
 	and dres = Array.copy (snd s) in 
 	match (fst s).(i) with
   |Forall(x,N,c) -> gres.(i) <- change_var_n x t c;
-                    ((gres,dres),"∀,g")   	
+                    ([(gres,dres)],"∀,g")   	
 	|_ -> raise (Wrong_sequent ([s],"wrong_sequent ∀,g"))
 		
 let exists_d_b s i t= 
@@ -343,7 +343,7 @@ let exists_d_b s i t=
 	and dres = Array.copy (snd s) in 
 	match (snd s).(i) with
 		|Exists(x,B,c) -> dres.(i) <- change_var_b x t c;
-											((gres,dres),"∃.d")                     
+											([(gres,dres)],"∃.d")                     
 		|_ -> raise (Wrong_sequent ([s],"wrong_sequent ∃.d"))		
 
 let exists_d_n s i t= 
@@ -353,5 +353,5 @@ let exists_d_n s i t=
 	and dres = Array.copy (snd s) in 
 	match (snd s).(i) with
 		|Exists(x,N,c) -> dres.(i) <- change_var_n x t c;
-											((gres,dres),"∃,d")                          
+											([(gres,dres)],"∃,d")                          
 		|_ -> raise (Wrong_sequent ([s],"wrong_sequent ∃,d"))				
