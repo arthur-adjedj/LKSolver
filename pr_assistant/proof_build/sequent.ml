@@ -15,7 +15,7 @@ let is_s_equiv (gf1,df1) (gf2,df2) :bool =
   else begin 
     let dict = Hashtbl.create 64 in
     let rec aux o t = match o,t with
-        |B a,B b -> a=b
+        |Bool a,Bool b -> a=b
         |Var u ,_ ->( try (if (Hashtbl.find dict u) <> t then false else (Hashtbl.replace dict u t; true))
                        with Not_found -> Hashtbl.add dict u t;true)
         |Not(a), Not(b) -> aux a b
