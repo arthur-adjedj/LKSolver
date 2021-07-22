@@ -9,8 +9,19 @@ let refl s =
   else 
     raise (Wrong_sequent ([s],"wrong_sequent, refl"))
   
-let sym s i = 
-  if 
+let syml s i = 
+  let gres = Array.copy (fst s)
+  and dres = Array.copy (snd s) in 
+  match (fst s).(i) with
+    |Nat_comp (Equal(a,b)) -> gres.(i) <- (Nat_comp(Equal(b,a)));
+   (gres,dres)
 
-  else 
-    raise (Wrong_sequent ([s],"wrong_sequent,sym"))
+let symr s i = 
+  let gres = Array.copy (fst s)
+  and dres = Array.copy (snd s) in 
+  match (snd s).(i) with
+    |Nat_comp (Equal(a,b)) -> dres.(i) <- (Nat_comp(Equal(b,a)));
+   ((gres,dres),"symr")
+   |_ -> raise (Wrong_sequent ([s],"wrong_sequent symr"))
+
+

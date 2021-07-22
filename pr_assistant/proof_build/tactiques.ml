@@ -27,7 +27,7 @@ let aff_left i (gf,df) =
 	else 
 		begin
 			let n1 = Array.length gf in
-			let gres = Array.make (n1-1) (B true)
+			let gres = Array.make (n1-1) (Bool true)
 			and dres = Array.copy df  in
 			for j = 0 to n1-2 do
 				if j<i then gres.(j) <- gf.(j)
@@ -44,7 +44,7 @@ let aff_right i (gf,df) =
 		begin
 			let n2 = Array.length df in
 			let gres = Array.copy gf  
-			and dres = Array.make (n2-1) (B false) in
+			and dres = Array.make (n2-1) (Bool false) in
 			for j = 0 to n2-2 do
 				if j<i then dres.(j) <- df.(j)
 				else dres.(j) <-df.(j+1) 
@@ -59,7 +59,7 @@ let contr_left i j (gf,df) =
 else
 	begin
 		let n1 = Array.length gf in 
-		let gres = Array.make (n1-1) (B true) 
+		let gres = Array.make (n1-1) (Bool true) 
 		and dres = Array.copy df in 
 		for k = 0 to n1-2 do
 			if k<i then gres.(k) <- gf.(j)
@@ -76,7 +76,7 @@ let contr_right i j (gf,df) =
 		begin
 			let n2 = Array.length df in 
 			let gres = Array.copy gf 
-			and dres = Array.make (n2-1) (B false) in 
+			and dres = Array.make (n2-1) (Bool false) in 
 			for k = 0 to n2-2 do
 				if k<i then dres.(k) <- df.(j)
 				else dres.(k) <-df.(k+1) 
@@ -98,10 +98,10 @@ let coupure f c s =
 			let sum a b = a + (Bool.to_int b) in
 			let k1 = Array.fold_left sum 0 (fst c)
 			and k2 = Array.fold_left sum 0 (snd c) in
-			let gres1 = Array.make k1 (B true)
-			and dres1 = Array.make (k2+1) (B false)
-			and gres2 = Array.make (n1-k1+1) (B true)
-			and dres2 = Array.make (n2-k2) (B false) in 
+			let gres1 = Array.make k1 (Bool true)
+			and dres1 = Array.make (k2+1) (Bool false)
+			and gres2 = Array.make (n1-k1+1) (Bool true)
+			and dres2 = Array.make (n2-k2) (Bool false) in 
 
 			let i1 = ref 0 in
 			for i=0 to n1-1 do
@@ -136,8 +136,8 @@ let not_left i (gf,df) =
 			let un_not (Not a)  = a in
 			let n1 = Array.length gf
 			and n2 = Array.length df in
-			let gres = Array.make (n1-1) (B true) 
-			and dres = Array.make (n2+1) (B false) in
+			let gres = Array.make (n1-1) (Bool true) 
+			and dres = Array.make (n2+1) (Bool false) in
 			for j = 0 to n1-2 do
 				if j<i then gres.(j) <- gf.(j)
 				else gres.(j) <-gf.(j+1) 
@@ -160,8 +160,8 @@ let not_right i (gf,df)=
 			let un_not (Not a)  = a in
 			let n1 = Array.length gf
 			and n2 = Array.length df in
-			let gres = Array.make (n1+1) (B true) 
-			and dres = Array.make (n2-1) (B false) in
+			let gres = Array.make (n1+1) (Bool true) 
+			and dres = Array.make (n2-1) (Bool false) in
 			for j = 0 to n2-2 do
 				if j<i then dres.(j) <- df.(j)
 				else dres.(j) <-df.(j+1) 
@@ -182,7 +182,7 @@ let and_left i (gf,df)=
 		begin
 			let un_and (And (a,b)) = (a,b) in
 			let n1 = Array.length gf in
-			let gres = Array.make (n1+1) (B true) 
+			let gres = Array.make (n1+1) (Bool true) 
 			and dres = Array.copy df in
 			for j = 0 to n1 do
 				if j<i then gres.(j) <- gf.(j)
@@ -238,7 +238,7 @@ let or_right i (gf,df) :((sequent list) * string)=
 		begin
 			let un_or (Or (a,b)) = (a,b) in
 			let n2 = Array.length df in
-			let dres = Array.make (n2+1) (B false) 
+			let dres = Array.make (n2+1) (Bool false) 
 			and gres = Array.copy gf in
 			for j = 0 to n2 do
 				if j<i then dres.(j) <- df.(j)
@@ -261,8 +261,8 @@ let imp_left i (gf,df) :((sequent list) * string)=
 			let un_imp (Imp (a,b)) = (a,b) in
 			let n1 = Array.length gf 
 			and n2 = Array.length df in
-			let dres1 = Array.make (n2+1) (B false) 
-			and gres1 = Array.make (n1-1) (B true)
+			let dres1 = Array.make (n2+1) (Bool false) 
+			and gres1 = Array.make (n1-1) (Bool true)
 			and gres2 = Array.copy gf 
 			and dres2 = Array.copy df in
 			gres2.(i) <- (snd (un_imp gf.(i)));
@@ -287,7 +287,7 @@ let imp_right i	(gf,df) :((sequent list) * string)=
 		begin
 			let un_imp (Imp (a,b)) = (a,b) in
 			let n1 = Array.length gf in
-			let gres = Array.make (n1+1) (B true)
+			let gres = Array.make (n1+1) (Bool true)
 			and dres = Array.copy df in
 			dres.(i) <- snd (un_imp df.(i));
 			for j=0 to n1-1 do 
@@ -297,3 +297,61 @@ let imp_right i	(gf,df) :((sequent list) * string)=
 			([(gres,dres)], "->right "^(string_of_int i))
 		end
 			
+
+let forall_d s i = 
+	let gres = Array.copy (fst s)
+	and dres = Array.copy (snd s) in 
+	match (snd s).(i) with
+		|Forall(_,_,c) -> dres.(i) <- c;
+													((gres,dres),"∀d")
+		|_ -> raise (Wrong_sequent ([s],"wrong_sequent ∀d"))
+
+		
+let exists_g s i = 
+	let gres = Array.copy (fst s)
+	and dres = Array.copy (snd s) in 
+	match (fst s).(i) with
+		|Forall(_,_,c) -> gres.(i) <- c;
+													((gres,dres),"∃g")
+		|_ -> raise (Wrong_sequent ([s],"wrong_sequent ∃g"))
+
+
+let forall_g_b s i t = 
+  if not (canBeChanged (fst s).(i) t) then
+    raise (Wrong_sequent ([s],"Wrong_sequent, ∀.g"));
+	let gres = Array.copy (fst s)
+	and dres = Array.copy (snd s) in 
+	match (fst s).(i) with
+  |Forall(x,B,c) -> gres.(i) <- change_var_b x t c;
+                    ((gres,dres),"∀.g")
+	|_ -> raise (Wrong_sequent ([s],"wrong_sequent ∀.g"))
+
+let forall_g_n s i t = 
+  if not (canBeChanged (fst s).(i) (Nat_comp (Equal(t,Zero)))) then
+    raise (Wrong_sequent ([s],"Wrong_sequent, ∀,g"));
+	let gres = Array.copy (fst s)
+	and dres = Array.copy (snd s) in 
+	match (fst s).(i) with
+  |Forall(x,N,c) -> gres.(i) <- change_var_n x t c;
+                    ((gres,dres),"∀,g")   	
+	|_ -> raise (Wrong_sequent ([s],"wrong_sequent ∀,g"))
+		
+let exists_d_b s i t= 
+  if not (canBeChanged (snd s).(i) t) then
+    raise (Wrong_sequent ([s],"Wrong_sequent, ∃.d"));
+	let gres = Array.copy (fst s)
+	and dres = Array.copy (snd s) in 
+	match (snd s).(i) with
+		|Exists(x,B,c) -> dres.(i) <- change_var_b x t c;
+											((gres,dres),"∃.d")                     
+		|_ -> raise (Wrong_sequent ([s],"wrong_sequent ∃.d"))		
+
+let exists_d_n s i t= 
+  if not (canBeChanged (snd s).(i) (Nat_comp (Equal(t,Zero)))) then
+    raise (Wrong_sequent ([s],"Wrong_sequent, ∃,d"));
+	let gres = Array.copy (fst s)
+	and dres = Array.copy (snd s) in 
+	match (snd s).(i) with
+		|Exists(x,N,c) -> dres.(i) <- change_var_n x t c;
+											((gres,dres),"∃,d")                          
+		|_ -> raise (Wrong_sequent ([s],"wrong_sequent ∃,d"))				
