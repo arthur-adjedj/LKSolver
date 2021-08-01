@@ -19,7 +19,9 @@ let%test "existst_b" = fst (exists_g ([|Exists('x',B,Imp(Var 'x',Var 'x'))|],[||
 let%test "exists_d_B,true" =  fst (exists_d_b ([||],[|Exists('x',B,Imp(Var 'x',Var 'x'))|]) 0 (And(Var 'a',Var 'b'))) =  [([||],[|Imp(And(Var 'a',Var 'b'),And(Var 'a',Var 'b'))|])]
 let%test "exists_d_B,false" = try (fst (exists_d_b ([||],[|Exists('x',B,Exists('y',B,Imp(Var 'x',Var 'x')))|]) 0 (And(Var 'y',Var 'b'))) =  [([||],[|Exists('y',B,Imp(And(Var 'a',Var 'b'),And(Var 'a',Var 'b')))|])])
                               with _ -> true
-let%test "forall_g_N,true" = true  
-let%test "forall_g_N,false" = true                                
-let%test "existst_d_N,true" = true
-let%test "existst_d_N,false" = true
+let%test "forall_g_N,true" = fst (forall_g_n ([|Forall('a',N,Nat_comp(Equal(Var_nat 'a',Var_nat 'a')))|],[||]) 0 (Zero) )=  [([|Nat_comp(Equal(Zero,Zero))|],[||])]
+let%test "forall_g_N,false" = try fst (forall_g_n ([|Forall('a',N,Exists('b',N,Nat_comp(Equal(Sum(Var_nat 'b',Var_nat 'a'),Var_nat 'a'))))|],[||]) 0 (Sum(Zero,Var_nat 'b')))=  [([|Exists('b',N,Nat_comp(Equal(Sum(Var_nat 'b',Sum(Zero,Var_nat 'b')),Sum(Zero,Var_nat 'b'))))|],[||])]
+                              with _ -> true                              
+let%test "existst_d_N,true" = fst (exists_d_n ([||],[|Exists('a',N,Nat_comp(Equal(Var_nat 'a',Var_nat 'a')))|]) 0 (Zero) )=  [([||],[|Nat_comp(Equal(Zero,Zero))|])]
+let%test "existst_d_N,false" = try fst (exists_d_n ([||],[|Exists('a',N,Exists('b',N,Nat_comp(Equal(Sum(Var_nat 'b',Var_nat 'a'),Var_nat 'a'))))|]) 0 (Sum(Zero,Var_nat 'b')))=  [([||],[|Exists('b',N,Nat_comp(Equal(Sum(Var_nat 'b',Sum(Zero,Var_nat 'b')),Sum(Zero,Var_nat 'b'))))|])]
+                              with _ -> true      

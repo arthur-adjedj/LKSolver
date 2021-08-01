@@ -86,6 +86,18 @@ let rec unFreeVars f = match f with
     |Exists(x,t,c) -> VarSet.add (x,t) (unFreeVars c)
 
 
+let rec freeVars f = match f with
+    |Bool _ -> VarSet.empty
+    |Var a -> VarSet.singleton (a,N)
+    |Nat_comp _ -> VarSet.empty
+    |Not a -> freeVars a
+    |And(a,b) 
+    |Or(a,b) 
+    |Imp(a,b) -> VarSet.union (freeVars a) (freeVars b)
+    |Forall(x,t,c) 
+    |Exists(x,t,c) -> VarSet.remove (x,t) (freeVars c) 
+
+
 let rec natVar n =  match n with
     |Zero -> VarSet.empty
     |Succ(a) -> natVar a
@@ -111,6 +123,8 @@ let rec vars f = match f with
     |Imp(a,b) -> VarSet.union (vars a) (vars b)
     |Forall(x,t,c) 
     |Exists(x,t,c) -> VarSet.add (x,t) (vars c)   
+
+    
 
 let canBeChanged f t =
     VarSet.is_empty (VarSet.inter (unFreeVars f) (vars t)) 
