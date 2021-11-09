@@ -1,9 +1,7 @@
 # Proof assistant
 
 A simple experimental proof assistant, made for academic purposes.
-It is based on sequent calculus LK
-The prover has basic syntax and rules, and doesn't yet work with "forall" and "exists" rules.
-The main goal is to make it function on basic boolean propositions, before possibly building up to other cases such as natural numbers.
+It is based on sequent calculus LK system. And is supposed to work on boolean propositions, as well as natural numbers.
 
 ## How it currently works
 
